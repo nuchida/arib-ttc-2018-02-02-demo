@@ -25,4 +25,4 @@ Line 1: Address and port of CSE
 
 receiver_settings.txt
 Line 1: Address and port of CSE
-Line 2: URL for the sender's web server (for subscription notifications)
+Line 2: URL for the receiver's web server (for subscription notifications)
