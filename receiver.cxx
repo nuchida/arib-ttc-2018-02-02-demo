@@ -13,7 +13,7 @@ extern "C" {
 #define LED "GPIO-A"
 
 ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
-::std::string ae_name="demo-ae";
+::std::string receiver_ae_name="receiver-demo-ae";
 ::std::string container_name="receiver-1";
 ::std::string subscription_name="receiver-1-subscription";
 ::std::string server_addr;
@@ -26,22 +26,22 @@ void readSettings(::std::string& server_addr, ::std::string& my_addr) {
   infile.close();
 }
 
-long createAE(const ::std::string& cse_root_addr, const std::string& ae_name, const std::string& my_addr) {
+long createAE(const ::std::string& cse_root_addr, const std::string& receiver_ae_name, const std::string& my_addr) {
   long result;
   long del_result;
   std::unique_ptr< ::xml_schema::type > respObj;
   ::xml_schema::integer respObjType;
 
-  respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+ae_name, "1234", result, respObjType);
+  respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+receiver_ae_name, "1234", result, respObjType);
   std::cout << "Retrieve AE result:" << result <<  std::endl;
   std::cout << "Obj Type#:" << respObjType << std::endl;
 
   if (result==onem2m::onem2mHttpOK) // Delete any previous AE
-    ::onem2m::deleteResource(cse_root_addr+"/"+ae_name, "1234", del_result, respObjType);
+    ::onem2m::deleteResource(cse_root_addr+"/"+receiver_ae_name, "1234", del_result, respObjType);
 
   if (result==onem2m::onem2mHttpNOT_FOUND || result==onem2m::onem2mHttpOK) {
     auto ae = ::onem2m::AE();
-    ae.resourceName(ae_name);
+    ae.resourceName(receiver_ae_name);
     ae.App_ID("receiver-app");
     ae.requestReachability(true);
     auto poal =  onem2m::poaList(onem2m::poaList_base(1, my_addr));
@@ -117,7 +117,7 @@ onem2m::onem2mResult processNotification(std::string host, std::string& from, ::
   std::unique_ptr< ::xml_schema::type > respObj;
   ::xml_schema::integer respObjType;
   
-  respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+ae_name+"/"+container_name+"/la", "1234", result, respObjType);
+  respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+receiver_ae_name+"/"+container_name+"/la", "1234", result, respObjType);
   std::cout << "Retrieve CI result:" << result <<  std::endl;
   std::cout << "Obj Type#:" << respObjType << std::endl;
 
@@ -162,11 +162,11 @@ int main (int argc, char* argv[]) {
 
   startServer();
  
-  result = createAE(cse_root_addr, ae_name, my_addr);
+  result = createAE(cse_root_addr, receiver_ae_name, my_addr);
   std::cout<< "Create AE function result: " << result << std::endl;
-  result = createContainer(cse_root_addr+"/"+ae_name, container_name);
+  result = createContainer(cse_root_addr+"/"+receiver_ae_name, container_name);
   std::cout<< "Create Container function result: " << result << std::endl;
-  result = createSubscription(cse_root_addr+"/"+ae_name+"/"+container_name, cse_root_addr+"/"+ae_name ,subscription_name);
+  result = createSubscription(cse_root_addr+"/"+receiver_ae_name+"/"+container_name, cse_root_addr+"/"+receiver_ae_name ,subscription_name);
   std::cout<< "Create Subscription function result: " << result << std::endl;
 
   while (true) {
