@@ -70,8 +70,8 @@ int main (int argc, char* argv[]) {
   readSettings(server_addr);
   ::onem2m::setHostName(server_addr);
   ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
-  ::std::string sender_ae_name="demo-ae-sender";
-  ::std::string receiver_ae_name="demo-ae-receiver";
+  ::std::string sender_ae_name="sender-demo-ae";
+  ::std::string receiver_ae_name="receiver-demo-ae";
   ::std::string container_name="receiver-1";
   ::onem2m::setFrom("admin:admin");
   ::onem2m::setProtocol( ::onem2m::protocolXml);
