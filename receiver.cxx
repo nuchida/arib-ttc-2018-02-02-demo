@@ -10,7 +10,7 @@ extern "C" {
 
 #include "onem2m.hxx"
 
-#define LED "GPIO-C"
+#define LED "GPIO-A"
 
 ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
 ::std::string ae_name="demo-ae";
@@ -81,7 +81,7 @@ long createSubscription (const ::std::string& object_address, const std::string&
   events.push_back( ::onem2m::updateOfResource ); // Add one notification case to the list of notification events
   criteria.notificationEventType(events); // Assign the list of events to the criteria
   sub.eventNotificationCriteria(criteria); // Assign the criteria to the subscription
-  uris.push_back(ae_address); // Add one notification URI
+  uris.push_back(my_address); // Add one notification URI
   sub.notificationURI(uris);
   sub.latestNotify(true);
   respObj = ::onem2m::createResource(object_address, "1234", sub, result, respObjType);   
@@ -156,6 +156,7 @@ int main (int argc, char* argv[]) {
   // For Eclipse OM2M default install
   ::onem2m::setHostName(server_addr);
   ::onem2m::setFrom("admin:admin");
+  ::onem2m::setProtocol( ::onem2m:protocolXml);
 
   long result;
 
