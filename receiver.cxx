@@ -14,8 +14,8 @@ extern "C" {
 
 ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
 ::std::string receiver_ae_name="receiver-demo-ae";
-::std::string container_name="receiver-1";
-::std::string subscription_name="receiver-1-subscription";
+::std::string container_name="led_status";
+::std::string subscription_name="receiver-subscription";
 ::std::string server_addr;
 ::std::string my_addr;
 
