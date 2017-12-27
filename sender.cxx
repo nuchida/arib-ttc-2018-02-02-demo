@@ -72,7 +72,7 @@ int main (int argc, char* argv[]) {
   ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
   ::std::string sender_ae_name="sender-demo-ae";
   ::std::string receiver_ae_name="receiver-demo-ae";
-  ::std::string container_name="receiver-1";
+  ::std::string container_name="led_status";
   ::onem2m::setFrom("admin:admin");
   ::onem2m::setProtocol( ::onem2m::protocolXml);
 
