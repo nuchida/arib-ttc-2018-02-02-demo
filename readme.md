@@ -40,15 +40,18 @@ The demo aims to show the use of OS-IoT to read and write oneM2M resources. It d
 
 ## Building and Running The Applications (sender and receiver)
 
-The code for the sender and receiver are contained in the root directory of this repository. ATIS OS-IoT library and other required files are NOT included in this repository. That should be build separately using OS-IoT.
+The code for the sender and receiver are contained in the root directory of this repository. ATIS OS-IoT library and other required files are NOT included in this repository. Those should be build separately using OS-IoT.
 
 Build and Install OS-IoT:
+
 https://www.os-iot.org/build-and-install/
 
 Once you build OS-IoT, then you can clone this repository.
+
 git clone https://github.com/nuchida/arib-ttc-2018-02-02-demo
 
 Then you need to create libraryies and copy it along with the other files to the repository folder you created above.
+
 https://www.os-iot.org/documentation/linking-with-your-own-applications/
 
 To build the applications you should first install the dependencies and then use ```make``` from the appropriate directory.
