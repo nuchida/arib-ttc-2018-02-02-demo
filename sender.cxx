@@ -19,7 +19,7 @@ void readSettings(::std::string& server_addr) {
   infile.close();
 }
 
-long createAE(const ::std::string& cse_root_addr, const std::string& sender_ae_name, const std::string& my_addr) {
+long createAE(const ::std::string& cse_root_addr, const std::string& sender_ae_name) {
   long result;
   long del_result;
   std::unique_ptr< ::xml_schema::type > respObj;
@@ -35,10 +35,8 @@ long createAE(const ::std::string& cse_root_addr, const std::string& sender_ae_n
   if (result==onem2m::onem2mHttpNOT_FOUND || result==onem2m::onem2mHttpOK) {
     auto ae = ::onem2m::AE();
     ae.resourceName(sender_ae_name);
-    ae.App_ID("receiver-app");
-    ae.requestReachability(true);
-    auto poal =  onem2m::poaList(onem2m::poaList_base(1, my_addr));
-    ae.pointOfAccess( poal );
+    ae.App_ID("sender-app");
+    ae.requestReachability(false);
     respObj = ::onem2m::createResource(cse_root_addr, "1234", ae, result, respObjType);  
     std::cout << "Create AE result:" << result << "\n";
   }
@@ -80,7 +78,9 @@ int main (int argc, char* argv[]) {
   ::xml_schema::integer respObjType;
   std::unique_ptr< ::xml_schema::type > respObj;
   
-
+  result = createAE(cse_root_addr, sender_ae_name);
+  std::cout<< "Create AE function result: " << result << std::endl;
+  
    // *** Wait for an AE and Container to be created ***
   while (true) {
     respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+receiver_ae_name, "1234", result, respObjType);
