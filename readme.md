@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the source code used for the OS-IoT Demo at ARIB-TTC Developer Tutorial Seminar, 2018.
+This repository contains the source code used for the OS-IoT Demo at ARIB-TTC Developer Tutorial Seminar, 2018. This demo is based on the source code used for the OS-IoT Demo at ETSI IoT week, 2017 developed by ATIS with minor modifications.
 
 The demo consists four applications:
 1. A oneM2M sender, running on a DragonBoard 410C, which acts as a light switch.
