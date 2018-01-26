@@ -26,7 +26,7 @@ void readSettings(::std::string& server_addr, ::std::string& my_addr) {
   infile.close();
 }
 
-long createAE(const ::std::string& cse_root_addr, const std::string& receiver_ae_name, const std::string& my_addr) {
+long createAE(const ::std::string & cse_root_addr, const std::string & receiver_ae_name, const std::string & my_addr) {
   long result;
   long del_result;
   std::unique_ptr< ::xml_schema::type > respObj;
@@ -44,6 +44,10 @@ long createAE(const ::std::string& cse_root_addr, const std::string& receiver_ae
     ae.resourceName(receiver_ae_name);
     ae.App_ID("receiver-app");
     ae.requestReachability(true);
+    auto lb = ::onem2m::labels ();
+    lb.push_back("Type/actuator");
+    lb.push_back("Category/led");
+    ae.labels(lb);
     auto poal =  onem2m::poaList(onem2m::poaList_base(1, my_addr));
     ae.pointOfAccess( poal );
     respObj = ::onem2m::createResource(cse_root_addr, "1234", ae, result, respObjType);  
@@ -53,7 +57,7 @@ long createAE(const ::std::string& cse_root_addr, const std::string& receiver_ae
 }
 
 
-long createContainer(const ::std::string& ae_addr, const std::string& container_name) {
+long createContainer(const ::std::string & ae_addr, const std::string & container_name) {
   long result;
   std::unique_ptr< ::xml_schema::type > respObj;
   ::xml_schema::integer respObjType;
@@ -65,7 +69,7 @@ long createContainer(const ::std::string& ae_addr, const std::string& container_
   return result;
 }
 
-long createSubscription (const ::std::string& object_address, const std::string& ae_address, const ::std::string& subscription_name) {
+long createSubscription (const ::std::string & object_address, const std::string & ae_address, const ::std::string & subscription_name) {
   long result;
   
   ::xml_schema::integer respObjType;
@@ -89,7 +93,7 @@ long createSubscription (const ::std::string& object_address, const std::string&
   return result;
 }
 
-onem2m::onem2mResult processNotification(std::string host, std::string& from, ::onem2m::notification* notif ) {
+onem2m::onem2mResult processNotification(std::string host, std::string & from, ::onem2m::notification* notif ) {
     // Callback routine which is passed to onem2m::startHttpServer() and called when a notification is received.
     // This callback will occur in a separate thread to the main program.
 
