@@ -36,6 +36,10 @@ long createAE(const ::std::string& cse_root_addr, const std::string& sender_ae_n
     auto ae = ::onem2m::AE();
     ae.resourceName(sender_ae_name);
     ae.App_ID("sender-app");
+    auto lb = ::onem2m::labels ();
+    lb.push_back("Type/actuator");
+    lb.push_back("Category/button");
+    ae.labels(lb);
     ae.requestReachability(false);
     respObj = ::onem2m::createResource(cse_root_addr, "1234", ae, result, respObjType);  
     std::cout << "Create AE result:" << result << "\n";
