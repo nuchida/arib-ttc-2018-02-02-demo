@@ -1,5 +1,26 @@
 #include <iostream>
+#include <unistd.h>
+#include <thread>
+#include <chrono>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <algorithm>
 #include "onem2m.hxx"
+#include "SimpleOpt.h"
+
+#include <xercesc/dom/DOM.hpp>
+#include <xercesc/dom/DOMDocument.hpp>
+#include <xercesc/dom/DOMDocumentType.hpp>
+#include <xercesc/dom/DOMElement.hpp>
+#include <xercesc/dom/DOMImplementation.hpp>
+#include <xercesc/dom/DOMImplementationLS.hpp>
+#include <xercesc/dom/DOMNodeIterator.hpp>
+#include <xercesc/dom/DOMNodeList.hpp>
+#include <xercesc/dom/DOMText.hpp>
+#include <xercesc/parsers/XercesDOMParser.hpp>
+#include <xercesc/util/XMLUni.hpp>
+#include <xercesc/framework/MemBufInputSource.hpp>
 
 void outputObject( const ::xml_schema::integer objType, const ::xml_schema::type * objPtr) {
   // For now, just support a few objects.
@@ -47,22 +68,20 @@ void outputObject( const ::xml_schema::integer objType, const ::xml_schema::type
 
 int main (int argc, char* argv[]) {
 
-  readSettings(server_addr, my_addr);
-  std::cout << "Server address: "<<server_addr<<std::endl;
   ::onem2m::initialize();
 
   // For Eclipse OM2M default install
   ::onem2m::setHostName("192.168.179.4:8080");
   ::onem2m::setFrom("admin:admin");
   ::onem2m::setProtocol( ::onem2m::protocolXml);
-  ::std::string cse_root_addr = "/in-cse/in-name/receiver-demo-ae/led_status\la"; // SP-Relative address
+  ::std::string cse_root_addr = "/in-cse/in-name/receiver-demo-ae/led_status/la"; // SP-Relative address
 
   long result;
   ::xml_schema::integer respObjType;
   std::unique_ptr< ::xml_schema::type > respObj;
   
    // *** Retrieve a resource ***
-  respObj = retrieveResource(cse_root_addr, "1234", result, respObjType);
+  respObj = ::oneM2M::retrieveResource(cse_root_addr, "1234", result, respObjType);
   std::cout << "Retrieve result:" << result << "\n";  
   outputObject( respObjType, respObj.get()); 
 
