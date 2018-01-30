@@ -102,7 +102,8 @@ Line 1: Address and port of CSE
 Line 2: URL for the sender's web server (for subscription notifications)
 
 ```
-
+## About ATIS OS-IoT
+To learn more about ATIS Open Source – Internet of Things (OS-IoT), please visit https://www.os-iot.org/.
 
 ## LICENSE
 Please see the files ```LICENSE.md``` in this package for the licensing terms and the requirements
