@@ -31,6 +31,11 @@
 // in the accompanying FLOSSE file.
 //
 
+/**
+ * @file
+ * @brief Generated from CDT-notification-v3_2_0.xsd.
+ */
+
 #ifndef XSD_V3_2_0_ED_CDT_NOTIFICATION_HXX
 #define XSD_V3_2_0_ED_CDT_NOTIFICATION_HXX
 
@@ -100,153 +105,512 @@
 
 #include <xsd/cxx/tree/std-ostream-operators.hxx>
 
+/**
+ * @brief C++ namespace for the %http://www.w3.org/2001/XMLSchema
+ * schema namespace.
+ */
 namespace xml_schema
 {
   // anyType and anySimpleType.
   //
+
+  /**
+   * @brief C++ type corresponding to the anyType XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::type type;
+
+  /**
+   * @brief C++ type corresponding to the anySimpleType XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::simple_type< char, type > simple_type;
+
+  /**
+   * @brief Alias for the anyType type.
+   */
   typedef ::xsd::cxx::tree::type container;
+
 
   // 8-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the byte XML Schema
+   * built-in type.
+   */
   typedef signed char byte;
+
+  /**
+   * @brief C++ type corresponding to the unsignedByte XML Schema
+   * built-in type.
+   */
   typedef unsigned char unsigned_byte;
+
 
   // 16-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the short XML Schema
+   * built-in type.
+   */
   typedef short short_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedShort XML Schema
+   * built-in type.
+   */
   typedef unsigned short unsigned_short;
+
 
   // 32-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the int XML Schema
+   * built-in type.
+   */
   typedef int int_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedInt XML Schema
+   * built-in type.
+   */
   typedef unsigned int unsigned_int;
+
 
   // 64-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the long XML Schema
+   * built-in type.
+   */
   typedef long long long_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedLong XML Schema
+   * built-in type.
+   */
   typedef unsigned long long unsigned_long;
+
 
   // Supposed to be arbitrary-length integral types.
   //
+
+  /**
+   * @brief C++ type corresponding to the integer XML Schema
+   * built-in type.
+   */
   typedef long long integer;
+
+  /**
+   * @brief C++ type corresponding to the nonPositiveInteger XML Schema
+   * built-in type.
+   */
   typedef long long non_positive_integer;
+
+  /**
+   * @brief C++ type corresponding to the nonNegativeInteger XML Schema
+   * built-in type.
+   */
   typedef unsigned long long non_negative_integer;
+
+  /**
+   * @brief C++ type corresponding to the positiveInteger XML Schema
+   * built-in type.
+   */
   typedef unsigned long long positive_integer;
+
+  /**
+   * @brief C++ type corresponding to the negativeInteger XML Schema
+   * built-in type.
+   */
   typedef long long negative_integer;
+
 
   // Boolean.
   //
+
+  /**
+   * @brief C++ type corresponding to the boolean XML Schema
+   * built-in type.
+   */
   typedef bool boolean;
+
 
   // Floating-point types.
   //
+
+  /**
+   * @brief C++ type corresponding to the float XML Schema
+   * built-in type.
+   */
   typedef float float_;
+
+  /**
+   * @brief C++ type corresponding to the double XML Schema
+   * built-in type.
+   */
   typedef double double_;
+
+  /**
+   * @brief C++ type corresponding to the decimal XML Schema
+   * built-in type.
+   */
   typedef double decimal;
+
 
   // String types.
   //
+
+  /**
+   * @brief C++ type corresponding to the string XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::string< char, simple_type > string;
+
+  /**
+   * @brief C++ type corresponding to the normalizedString XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
+
+  /**
+   * @brief C++ type corresponding to the token XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::token< char, normalized_string > token;
+
+  /**
+   * @brief C++ type corresponding to the Name XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::name< char, token > name;
+
+  /**
+   * @brief C++ type corresponding to the NMTOKEN XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
+
+  /**
+   * @brief C++ type corresponding to the NMTOKENS XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
+
+  /**
+   * @brief C++ type corresponding to the NCName XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::ncname< char, name > ncname;
+
+  /**
+   * @brief C++ type corresponding to the language XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::language< char, token > language;
+
 
   // ID/IDREF.
   //
+
+  /**
+   * @brief C++ type corresponding to the ID XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::id< char, ncname > id;
+
+  /**
+   * @brief C++ type corresponding to the IDREF XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
+
+  /**
+   * @brief C++ type corresponding to the IDREFS XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+
 
   // URI.
   //
+
+  /**
+   * @brief C++ type corresponding to the anyURI XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::uri< char, simple_type > uri;
+
 
   // Qualified name.
   //
+
+  /**
+   * @brief C++ type corresponding to the QName XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::qname< char, simple_type, uri, ncname > qname;
+
 
   // Binary.
   //
+
+  /**
+   * @brief Binary buffer type.
+   */
   typedef ::xsd::cxx::tree::buffer< char > buffer;
+
+  /**
+   * @brief C++ type corresponding to the base64Binary XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::base64_binary< char, simple_type > base64_binary;
+
+  /**
+   * @brief C++ type corresponding to the hexBinary XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::hex_binary< char, simple_type > hex_binary;
+
 
   // Date/time.
   //
+
+  /**
+   * @brief Time zone type.
+   */
   typedef ::xsd::cxx::tree::time_zone time_zone;
+
+  /**
+   * @brief C++ type corresponding to the date XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::date< char, simple_type > date;
+
+  /**
+   * @brief C++ type corresponding to the dateTime XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::date_time< char, simple_type > date_time;
+
+  /**
+   * @brief C++ type corresponding to the duration XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::duration< char, simple_type > duration;
+
+  /**
+   * @brief C++ type corresponding to the gDay XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gday< char, simple_type > gday;
+
+  /**
+   * @brief C++ type corresponding to the gMonth XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gmonth< char, simple_type > gmonth;
+
+  /**
+   * @brief C++ type corresponding to the gMonthDay XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gmonth_day< char, simple_type > gmonth_day;
+
+  /**
+   * @brief C++ type corresponding to the gYear XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gyear< char, simple_type > gyear;
+
+  /**
+   * @brief C++ type corresponding to the gYearMonth XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gyear_month< char, simple_type > gyear_month;
+
+  /**
+   * @brief C++ type corresponding to the time XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::time< char, simple_type > time;
+
 
   // Entity.
   //
+
+  /**
+   * @brief C++ type corresponding to the ENTITY XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::entity< char, ncname > entity;
+
+  /**
+   * @brief C++ type corresponding to the ENTITIES XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::entities< char, simple_type, entity > entities;
 
+
+
+  /**
+   * @brief Content order sequence entry.
+   */
   typedef ::xsd::cxx::tree::content_order content_order;
   // Namespace information and list stream. Used in
   // serialization functions.
   //
+  /**
+   * @brief Namespace serialization information.
+   */
   typedef ::xsd::cxx::xml::dom::namespace_info< char > namespace_info;
+
+  /**
+   * @brief Namespace serialization information map.
+   */
   typedef ::xsd::cxx::xml::dom::namespace_infomap< char > namespace_infomap;
+
+  /**
+   * @brief List serialization stream.
+   */
   typedef ::xsd::cxx::tree::list_stream< char > list_stream;
+
+  /**
+   * @brief Serialization wrapper for the %double type.
+   */
   typedef ::xsd::cxx::tree::as_double< double_ > as_double;
+
+  /**
+   * @brief Serialization wrapper for the %decimal type.
+   */
   typedef ::xsd::cxx::tree::as_decimal< decimal > as_decimal;
+
+  /**
+   * @brief Simple type facet.
+   */
   typedef ::xsd::cxx::tree::facet facet;
 
   // Flags and properties.
   //
+
+  /**
+   * @brief Parsing and serialization flags.
+   */
   typedef ::xsd::cxx::tree::flags flags;
+
+  /**
+   * @brief Parsing properties.
+   */
   typedef ::xsd::cxx::tree::properties< char > properties;
 
   // Parsing/serialization diagnostics.
   //
+
+  /**
+   * @brief Error severity.
+   */
   typedef ::xsd::cxx::tree::severity severity;
+
+  /**
+   * @brief Error condition.
+   */
   typedef ::xsd::cxx::tree::error< char > error;
+
+  /**
+   * @brief List of %error conditions.
+   */
   typedef ::xsd::cxx::tree::diagnostics< char > diagnostics;
 
   // Exceptions.
   //
+
+  /**
+   * @brief Root of the C++/Tree %exception hierarchy.
+   */
   typedef ::xsd::cxx::tree::exception< char > exception;
+
+  /**
+   * @brief Exception indicating that the size argument exceeds
+   * the capacity argument.
+   */
   typedef ::xsd::cxx::tree::bounds< char > bounds;
+
+  /**
+   * @brief Exception indicating that a duplicate ID value
+   * was encountered in the object model.
+   */
   typedef ::xsd::cxx::tree::duplicate_id< char > duplicate_id;
+
+  /**
+   * @brief Exception indicating a parsing failure.
+   */
   typedef ::xsd::cxx::tree::parsing< char > parsing;
+
+  /**
+   * @brief Exception indicating that an expected element
+   * was not encountered.
+   */
   typedef ::xsd::cxx::tree::expected_element< char > expected_element;
+
+  /**
+   * @brief Exception indicating that an unexpected element
+   * was encountered.
+   */
   typedef ::xsd::cxx::tree::unexpected_element< char > unexpected_element;
+
+  /**
+   * @brief Exception indicating that an expected attribute
+   * was not encountered.
+   */
   typedef ::xsd::cxx::tree::expected_attribute< char > expected_attribute;
+
+  /**
+   * @brief Exception indicating that an unexpected enumerator
+   * was encountered.
+   */
   typedef ::xsd::cxx::tree::unexpected_enumerator< char > unexpected_enumerator;
+
+  /**
+   * @brief Exception indicating that the text content was
+   * expected for an element.
+   */
   typedef ::xsd::cxx::tree::expected_text_content< char > expected_text_content;
+
+  /**
+   * @brief Exception indicating that a prefix-namespace
+   * mapping was not provided.
+   */
   typedef ::xsd::cxx::tree::no_prefix_mapping< char > no_prefix_mapping;
+
+  /**
+   * @brief Exception indicating a serialization failure.
+   */
   typedef ::xsd::cxx::tree::serialization< char > serialization;
 
-  // Error handler callback interface.
-  //
+  /**
+   * @brief Error handler callback interface.
+   */
   typedef ::xsd::cxx::xml::error_handler< char > error_handler;
 
-  // DOM interaction.
-  //
+  /**
+   * @brief DOM interaction.
+   */
   namespace dom
   {
-    // Automatic pointer for DOMDocument.
-    //
+    /**
+     * @brief Automatic pointer for DOMDocument.
+     */
     using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
-    // DOM user data key for back pointers to tree nodes.
-    //
+    /**
+     * @brief DOM user data key for back pointers to tree nodes.
+     */
     const XMLCh* const tree_node_key = ::xsd::cxx::tree::user_data_keys::node;
 #endif
   }
@@ -256,6 +620,7 @@ namespace xml_schema
 //
 namespace onem2m
 {
+  class notificationBase;
   class notification;
   class notificationEvent;
   class operationMonitor;
@@ -280,155 +645,529 @@ namespace onem2m
 
 #include "CDT-commonTypes.hxx"
 
+/**
+ * @brief C++ namespace for the %http://www.onem2m.org/xml/protocols
+ * schema namespace.
+ */
 namespace onem2m
 {
-  class notification: public ::xml_schema::type
+  /**
+   * @brief Class corresponding to the %notification schema type.
+   *
+   * @nosubgrouping
+   */
+  class notificationBase: public ::xml_schema::type
   {
     public:
-    // notificationEvent
-    //
+    /**
+     * @name notificationEvent
+     *
+     * @brief Accessor and modifier functions for the %notificationEvent
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::notificationEvent notificationEvent_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< notificationEvent_type > notificationEvent_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< notificationEvent_type, char > notificationEvent_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const notificationEvent_optional&
     notificationEvent () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     notificationEvent_optional&
     notificationEvent ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     notificationEvent (const notificationEvent_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     notificationEvent (const notificationEvent_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     notificationEvent (::std::unique_ptr< notificationEvent_type > p);
 
-    // verificationRequest
-    //
+    //@}
+
+    /**
+     * @name verificationRequest
+     *
+     * @brief Accessor and modifier functions for the %verificationRequest
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::xml_schema::boolean verificationRequest_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< verificationRequest_type > verificationRequest_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< verificationRequest_type, char > verificationRequest_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const verificationRequest_optional&
     verificationRequest () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     verificationRequest_optional&
     verificationRequest ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     verificationRequest (const verificationRequest_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     verificationRequest (const verificationRequest_optional& x);
 
-    // subscriptionDeletion
-    //
+    //@}
+
+    /**
+     * @name subscriptionDeletion
+     *
+     * @brief Accessor and modifier functions for the %subscriptionDeletion
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::xml_schema::boolean subscriptionDeletion_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< subscriptionDeletion_type > subscriptionDeletion_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< subscriptionDeletion_type, char > subscriptionDeletion_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const subscriptionDeletion_optional&
     subscriptionDeletion () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     subscriptionDeletion_optional&
     subscriptionDeletion ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     subscriptionDeletion (const subscriptionDeletion_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     subscriptionDeletion (const subscriptionDeletion_optional& x);
 
-    // subscriptionReference
-    //
+    //@}
+
+    /**
+     * @name subscriptionReference
+     *
+     * @brief Accessor and modifier functions for the %subscriptionReference
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::xml_schema::uri subscriptionReference_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< subscriptionReference_type > subscriptionReference_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< subscriptionReference_type, char > subscriptionReference_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const subscriptionReference_optional&
     subscriptionReference () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     subscriptionReference_optional&
     subscriptionReference ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     subscriptionReference (const subscriptionReference_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     subscriptionReference (const subscriptionReference_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     subscriptionReference (::std::unique_ptr< subscriptionReference_type > p);
 
-    // creator
-    //
+    //@}
+
+    /**
+     * @name creator
+     *
+     * @brief Accessor and modifier functions for the %creator
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::ID creator_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< creator_type > creator_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< creator_type, char > creator_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const creator_optional&
     creator () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     creator_optional&
     creator ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     creator (const creator_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     creator (const creator_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     creator (::std::unique_ptr< creator_type > p);
 
-    // notificationForwardingURI
-    //
+    //@}
+
+    /**
+     * @name notificationForwardingURI
+     *
+     * @brief Accessor and modifier functions for the %notificationForwardingURI
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::xml_schema::uri notificationForwardingURI_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< notificationForwardingURI_type > notificationForwardingURI_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< notificationForwardingURI_type, char > notificationForwardingURI_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const notificationForwardingURI_optional&
     notificationForwardingURI () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     notificationForwardingURI_optional&
     notificationForwardingURI ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     notificationForwardingURI (const notificationForwardingURI_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     notificationForwardingURI (const notificationForwardingURI_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     notificationForwardingURI (::std::unique_ptr< notificationForwardingURI_type > p);
 
-    // Constructors.
-    //
-    notification ();
+    //@}
 
-    notification (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
+    /**
+     * @name Constructors
+     */
+    //@{
 
-    notification (const notification& x,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
+    notificationBase ();
 
-    virtual notification*
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
+    notificationBase (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
+    notificationBase (const notificationBase& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
+    virtual notificationBase*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
 
-    notification&
-    operator= (const notification& x);
+    /**
+     * @brief Copy assignment operator.
+     *
+     * @param x An instance to make a copy of.
+     * @return A reference to itself.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
+    notificationBase&
+    operator= (const notificationBase& x);
 
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
     virtual 
-    ~notification ();
+    ~notificationBase ();
 
     // Implementation.
     //
+
+    //@cond
+
     protected:
     void
     parse (::xsd::cxx::xml::dom::parser< char >&,
@@ -441,98 +1180,321 @@ namespace onem2m
     subscriptionReference_optional subscriptionReference_;
     creator_optional creator_;
     notificationForwardingURI_optional notificationForwardingURI_;
+
+    //@endcond
   };
 
+  /**
+   * @brief Class corresponding to the %notificationEvent schema type.
+   *
+   * @nosubgrouping
+   */
   class notificationEvent: public ::xml_schema::type
   {
     public:
-    // representation
-    //
+    /**
+     * @name representation
+     *
+     * @brief Accessor and modifier functions for the %representation
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::xml_schema::type representation_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< representation_type > representation_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< representation_type, char > representation_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const representation_optional&
     representation () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     representation_optional&
     representation ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     representation (const representation_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     representation (const representation_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     representation (::std::unique_ptr< representation_type > p);
 
-    // operationMonitor
-    //
+    //@}
+
+    /**
+     * @name operationMonitor
+     *
+     * @brief Accessor and modifier functions for the %operationMonitor
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::operationMonitor operationMonitor_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< operationMonitor_type > operationMonitor_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< operationMonitor_type, char > operationMonitor_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const operationMonitor_optional&
     operationMonitor () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     operationMonitor_optional&
     operationMonitor ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     operationMonitor (const operationMonitor_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     operationMonitor (const operationMonitor_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     operationMonitor (::std::unique_ptr< operationMonitor_type > p);
 
-    // notificationEventType
-    //
+    //@}
+
+    /**
+     * @name notificationEventType
+     *
+     * @brief Accessor and modifier functions for the %notificationEventType
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::notificationEventType notificationEventType_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< notificationEventType_type > notificationEventType_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< notificationEventType_type, char > notificationEventType_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const notificationEventType_optional&
     notificationEventType () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     notificationEventType_optional&
     notificationEventType ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     notificationEventType (const notificationEventType_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     notificationEventType (const notificationEventType_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     notificationEventType (::std::unique_ptr< notificationEventType_type > p);
 
-    // Constructors.
-    //
+    //@}
+
+    /**
+     * @name Constructors
+     */
+    //@{
+
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
     notificationEvent ();
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationEvent (const ::xercesc::DOMElement& e,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     notificationEvent (const notificationEvent& x,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual notificationEvent*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
 
+    /**
+     * @brief Copy assignment operator.
+     *
+     * @param x An instance to make a copy of.
+     * @return A reference to itself.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     notificationEvent&
     operator= (const notificationEvent& x);
 
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
     virtual 
     ~notificationEvent ();
 
     // Implementation.
     //
+
+    //@cond
+
     protected:
     void
     parse (::xsd::cxx::xml::dom::parser< char >&,
@@ -542,77 +1504,245 @@ namespace onem2m
     representation_optional representation_;
     operationMonitor_optional operationMonitor_;
     notificationEventType_optional notificationEventType_;
+
+    //@endcond
   };
 
+  /**
+   * @brief Class corresponding to the %operationMonitor schema type.
+   *
+   * @nosubgrouping
+   */
   class operationMonitor: public ::xml_schema::type
   {
     public:
-    // operation
-    //
+    /**
+     * @name operation
+     *
+     * @brief Accessor and modifier functions for the %operation
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::operation operation_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< operation_type > operation_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< operation_type, char > operation_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const operation_optional&
     operation () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     operation_optional&
     operation ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     operation (const operation_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     operation (const operation_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     operation (::std::unique_ptr< operation_type > p);
 
-    // originator
-    //
+    //@}
+
+    /**
+     * @name originator
+     *
+     * @brief Accessor and modifier functions for the %originator
+     * optional element.
+     */
+    //@{
+
+    /**
+     * @brief Element type.
+     */
     typedef ::onem2m::ID originator_type;
+
+    /**
+     * @brief Element optional container type.
+     */
     typedef ::xsd::cxx::tree::optional< originator_type > originator_optional;
+
+    /**
+     * @brief Element traits type.
+     */
     typedef ::xsd::cxx::tree::traits< originator_type, char > originator_traits;
 
+    /**
+     * @brief Return a read-only (constant) reference to the element
+     * container.
+     *
+     * @return A constant reference to the optional container.
+     */
     const originator_optional&
     originator () const;
 
+    /**
+     * @brief Return a read-write reference to the element container.
+     *
+     * @return A reference to the optional container.
+     */
     originator_optional&
     originator ();
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x A new value to set.
+     *
+     * This function makes a copy of its argument and sets it as
+     * the new value of the element.
+     */
     void
     originator (const originator_type& x);
 
+    /**
+     * @brief Set the element value.
+     *
+     * @param x An optional container with the new value to set.
+     *
+     * If the value is present in @a x then this function makes a copy 
+     * of this value and sets it as the new value of the element.
+     * Otherwise the element container is set the 'not present' state.
+     */
     void
     originator (const originator_optional& x);
 
+    /**
+     * @brief Set the element value without copying.
+     *
+     * @param p A new value to use.
+     *
+     * This function will try to use the passed value directly instead
+     * of making a copy.
+     */
     void
     originator (::std::unique_ptr< originator_type > p);
 
-    // Constructors.
-    //
+    //@}
+
+    /**
+     * @name Constructors
+     */
+    //@{
+
+    /**
+     * @brief Create an instance from the ultimate base and
+     * initializers for required elements and attributes.
+     */
     operationMonitor ();
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     operationMonitor (const ::xercesc::DOMElement& e,
                       ::xml_schema::flags f = 0,
                       ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     operationMonitor (const operationMonitor& x,
                       ::xml_schema::flags f = 0,
                       ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual operationMonitor*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
 
+    /**
+     * @brief Copy assignment operator.
+     *
+     * @param x An instance to make a copy of.
+     * @return A reference to itself.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     operationMonitor&
     operator= (const operationMonitor& x);
 
+    //@}
+
+    /**
+     * @brief Destructor.
+     */
     virtual 
     ~operationMonitor ();
 
     // Implementation.
     //
+
+    //@cond
+
     protected:
     void
     parse (::xsd::cxx::xml::dom::parser< char >&,
@@ -621,6 +1751,8 @@ namespace onem2m
     protected:
     operation_optional operation_;
     originator_optional originator_;
+
+    //@endcond
   };
 }
 
@@ -629,7 +1761,7 @@ namespace onem2m
 namespace onem2m
 {
   ::std::ostream&
-  operator<< (::std::ostream&, const notification&);
+  operator<< (::std::ostream&, const notificationBase&);
 
   ::std::ostream&
   operator<< (::std::ostream&, const notificationEvent&);
@@ -646,52 +1778,147 @@ namespace onem2m
 
 namespace onem2m
 {
-  // Parse a URI or a local file.
-  //
+  /**
+   * @name Parsing functions for the %notification document root.
+   */
+  //@{
 
+  /**
+   * @brief Parse a URI or a local file.
+   *
+   * @param uri A URI or a local file name.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function uses exceptions to report parsing errors.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (const ::std::string& uri,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a URI or a local file with an error handler.
+   *
+   * @param uri A URI or a local file name.
+   * @param eh An error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (const ::std::string& uri,
                  ::xml_schema::error_handler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+   * handler.
+   *
+   * @param uri A URI or a local file name.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (const ::std::string& uri,
                  ::xercesc::DOMErrorHandler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  // Parse std::istream.
-  //
-
+  /**
+   * @brief Parse a standard input stream.
+   *
+   * @param is A standrad input stream.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function uses exceptions to report parsing errors.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a standard input stream with an error handler.
+   *
+   * @param is A standrad input stream.
+   * @param eh An error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  ::xml_schema::error_handler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a standard input stream with a Xerces-C++ DOM error
+   * handler.
+   *
+   * @param is A standrad input stream.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  ::xercesc::DOMErrorHandler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a standard input stream with a resource id.
+   *
+   * @param is A standrad input stream.
+   * @param id A resource id.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * The resource id is used to identify the document being parsed in
+   * diagnostics as well as to resolve relative paths.
+   *
+   * This function uses exceptions to report parsing errors.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  const ::std::string& id,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a standard input stream with a resource id and an
+   * error handler.
+   *
+   * @param is A standrad input stream.
+   * @param id A resource id.
+   * @param eh An error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * The resource id is used to identify the document being parsed in
+   * diagnostics as well as to resolve relative paths.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  const ::std::string& id,
@@ -699,6 +1926,22 @@ namespace onem2m
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a standard input stream with a resource id and a
+   * Xerces-C++ DOM error handler.
+   *
+   * @param is A standrad input stream.
+   * @param id A resource id.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * The resource id is used to identify the document being parsed in
+   * diagnostics as well as to resolve relative paths.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::std::istream& is,
                  const ::std::string& id,
@@ -706,38 +1949,87 @@ namespace onem2m
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  // Parse xercesc::InputSource.
-  //
-
+  /**
+   * @brief Parse a Xerces-C++ input source.
+   *
+   * @param is A Xerces-C++ input source.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function uses exceptions to report parsing errors.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::xercesc::InputSource& is,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a Xerces-C++ input source with an error handler.
+   *
+   * @param is A Xerces-C++ input source.
+   * @param eh An error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::xercesc::InputSource& is,
                  ::xml_schema::error_handler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+   * error handler.
+   *
+   * @param is A Xerces-C++ input source.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function reports parsing errors by calling the error handler.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::xercesc::InputSource& is,
                  ::xercesc::DOMErrorHandler& eh,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
-  // Parse xercesc::DOMDocument.
-  //
-
+  /**
+   * @brief Parse a Xerces-C++ DOM document.
+   *
+   * @param d A Xerces-C++ DOM document.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (const ::xercesc::DOMDocument& d,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
 
+  /**
+   * @brief Parse a Xerces-C++ DOM document.
+   *
+   * @param d A pointer to the Xerces-C++ DOM document.
+   * @param f Parsing flags.
+   * @param p Parsing properties. 
+   * @return A pointer to the root of the object model.
+   *
+   * This function is normally used together with the keep_dom and
+   * own_dom parsing flags to assign ownership of the DOM document
+   * to the object model.
+   */
   ::std::unique_ptr< ::onem2m::notification >
   notification_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                  ::xml_schema::flags f = 0,
                  const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+  //@}
 }
 
 #include <iosfwd>
@@ -750,9 +2042,22 @@ namespace onem2m
 
 namespace onem2m
 {
-  // Serialize to std::ostream.
-  //
+  /**
+   * @name Serialization functions for the %notification document root.
+   */
+  //@{
 
+  /**
+   * @brief Serialize to a standard output stream.
+   *
+   * @param os A standrad output stream.
+   * @param x An object model to serialize.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function uses exceptions to report serialization errors.
+   */
   void
   notification_ (::std::ostream& os,
                  const ::onem2m::notification& x, 
@@ -760,6 +2065,19 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
+  /**
+   * @brief Serialize to a standard output stream with an error handler.
+   *
+   * @param os A standrad output stream.
+   * @param x An object model to serialize.
+   * @param eh An error handler.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function reports serialization errors by calling the error
+   * handler.
+   */
   void
   notification_ (::std::ostream& os,
                  const ::onem2m::notification& x, 
@@ -768,6 +2086,20 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
+  /**
+   * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+   * error handler.
+   *
+   * @param os A standrad output stream.
+   * @param x An object model to serialize.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function reports serialization errors by calling the error
+   * handler.
+   */
   void
   notification_ (::std::ostream& os,
                  const ::onem2m::notification& x, 
@@ -776,9 +2108,17 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
-  // Serialize to xercesc::XMLFormatTarget.
-  //
-
+  /**
+   * @brief Serialize to a Xerces-C++ XML format target.
+   *
+   * @param ft A Xerces-C++ XML format target.
+   * @param x An object model to serialize.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function uses exceptions to report serialization errors.
+   */
   void
   notification_ (::xercesc::XMLFormatTarget& ft,
                  const ::onem2m::notification& x, 
@@ -786,6 +2126,20 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
+  /**
+   * @brief Serialize to a Xerces-C++ XML format target with an error
+   * handler.
+   *
+   * @param ft A Xerces-C++ XML format target.
+   * @param x An object model to serialize.
+   * @param eh An error handler.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function reports serialization errors by calling the error
+   * handler.
+   */
   void
   notification_ (::xercesc::XMLFormatTarget& ft,
                  const ::onem2m::notification& x, 
@@ -794,6 +2148,20 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
+  /**
+   * @brief Serialize to a Xerces-C++ XML format target with a
+   * Xerces-C++ DOM error handler.
+   *
+   * @param ft A Xerces-C++ XML format target.
+   * @param x An object model to serialize.
+   * @param eh A Xerces-C++ DOM error handler.
+   * @param m A namespace information map.
+   * @param e A character encoding to produce XML in.
+   * @param f Serialization flags.
+   *
+   * This function reports serialization errors by calling the error
+   * handler.
+   */
   void
   notification_ (::xercesc::XMLFormatTarget& ft,
                  const ::onem2m::notification& x, 
@@ -802,24 +2170,39 @@ namespace onem2m
                  const ::std::string& e = "UTF-8",
                  ::xml_schema::flags f = 0);
 
-  // Serialize to an existing xercesc::DOMDocument.
-  //
-
+  /**
+   * @brief Serialize to an existing Xerces-C++ DOM document.
+   *
+   * @param d A Xerces-C++ DOM document.
+   * @param x An object model to serialize.
+   * @param f Serialization flags.
+   *
+   * Note that it is your responsibility to create the DOM document
+   * with the correct root element as well as set the necessary
+   * namespace mapping attributes.
+   */
   void
   notification_ (::xercesc::DOMDocument& d,
                  const ::onem2m::notification& x,
                  ::xml_schema::flags f = 0);
 
-  // Serialize to a new xercesc::DOMDocument.
-  //
-
+  /**
+   * @brief Serialize to a new Xerces-C++ DOM document.
+   *
+   * @param x An object model to serialize.
+   * @param m A namespace information map.
+   * @param f Serialization flags.
+   * @return A pointer to the new Xerces-C++ DOM document.
+   */
   ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
   notification_ (const ::onem2m::notification& x, 
                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
                  ::xml_schema::flags f = 0);
 
+  //@}
+
   void
-  operator<< (::xercesc::DOMElement&, const notification&);
+  operator<< (::xercesc::DOMElement&, const notificationBase&);
 
   void
   operator<< (::xercesc::DOMElement&, const notificationEvent&);
@@ -832,6 +2215,7 @@ namespace onem2m
 
 // Begin epilogue.
 //
+#include "../CDT-notification-custom.hxx"
 //
 // End epilogue.
 

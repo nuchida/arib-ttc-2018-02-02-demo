@@ -9,7 +9,7 @@ extern "C" {
 }
 
 #include "onem2m.hxx"
-
+using namespace ::onem2m;
 #define LED "GPIO-A"
 
 ::std::string cse_root_addr = "/in-cse/in-name"; // SP-Relative address
@@ -56,7 +56,6 @@ long createAE(const ::std::string & cse_root_addr, const std::string & receiver_
   return result;
 }
 
-
 long createContainer(const ::std::string & ae_addr, const std::string & container_name) {
   long result;
   std::unique_ptr< ::xml_schema::type > respObj;
@@ -87,6 +86,7 @@ long createSubscription (const ::std::string & object_address, const std::string
   sub.eventNotificationCriteria(criteria); // Assign the criteria to the subscription
   uris.push_back(my_addr); // Add one notification URI
   sub.notificationURI(uris);
+  sub.notificationContentType(nctAllAttributes);
   sub.latestNotify(true);
   respObj = ::onem2m::createResource(object_address, "1234", sub, result, respObjType);   
   std::cout << "Create subscription result:" << result << "\n";
@@ -117,24 +117,21 @@ onem2m::onem2mResult processNotification(std::string host, std::string & from, :
     return onem2m::onem2mHttpOK;
   }
   
-  long result;
   std::unique_ptr< ::xml_schema::type > respObj;
   ::xml_schema::integer respObjType;
-  
-  respObj = ::onem2m::retrieveResource(cse_root_addr+"/"+receiver_ae_name+"/"+container_name+"/la", "1234", result, respObjType);
-  std::cout << "Retrieve CI result:" << result <<  std::endl;
-  std::cout << "Obj Type#:" << respObjType << std::endl;
-
-  if (respObjType == ::onem2m::resourceTypeContentInstance) {
-    ::onem2m::contentInstance* ciPtr = static_cast< ::onem2m::contentInstance* >(respObj.get());
-    if (ciPtr->content().present ()) {
-      std::cout << "Content returned:" << ciPtr-> content () . get() << "\n";
-      if (ciPtr-> content () . get()=="1")
-        digitalWrite(gpio_id(LED), HIGH);
-      else
-        digitalWrite(gpio_id(LED), LOW);
-    }
-  }
+  ::xml_schema::type * respObjPtr;
+  respObjPtr = notif -> getRepresentationObject( respObjType ); // notif is a pointer to the notification object
+    if (respObjType == resourceTypeContentInstance) {
+	    auto ciPtr = static_cast< const contentInstance* >(respObjPtr);
+ 		std::cout << "contentInstance with content:" << ciPtr-> content () << "\r\n";	
+  	if (ciPtr->content().present ()) {
+  		std::cout << "Content returned:" << ciPtr-> content () . get() << "\n";
+  		if (ciPtr-> content () . get()=="1")
+        		digitalWrite(gpio_id(LED), HIGH);
+    		else
+     		digitalWrite(gpio_id(LED), LOW);
+	}
+ }
 
   return onem2m::onem2mHttpOK;
 

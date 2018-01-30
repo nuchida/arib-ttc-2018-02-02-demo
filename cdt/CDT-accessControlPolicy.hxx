@@ -33,11 +33,11 @@
 
 /**
  * @file
- * @brief Generated from CDT-AE-v3_2_0.xsd.
+ * @brief Generated from CDT-accessControlPolicy-v3_2_0.xsd.
  */
 
-#ifndef XSD_V3_2_0_ED_CDT_AE_HXX
-#define XSD_V3_2_0_ED_CDT_AE_HXX
+#ifndef XSD_V3_2_0_ED_CDT_ACCESS_CONTROL_POLICY_HXX
+#define XSD_V3_2_0_ED_CDT_ACCESS_CONTROL_POLICY_HXX
 
 #ifndef XSD_CXX11
 #define XSD_CXX11
@@ -620,7 +620,7 @@ namespace xml_schema
 //
 namespace onem2m
 {
-  class AE;
+  class accessControlPolicy;
 }
 
 
@@ -642,7 +642,7 @@ namespace onem2m
 
 #include "CDT-commonTypes.hxx"
 
-#include "CDT-container.hxx"
+#include "CDT-subscription.hxx"
 
 /**
  * @brief C++ namespace for the %http://www.onem2m.org/xml/protocols
@@ -651,17 +651,17 @@ namespace onem2m
 namespace onem2m
 {
   /**
-   * @brief Class corresponding to the %AE schema type.
+   * @brief Class corresponding to the %accessControlPolicy schema type.
    *
    * @nosubgrouping
    */
-  class AE: public ::onem2m::announceableResource
+  class accessControlPolicy: public ::onem2m::announceableSubordinateResource
   {
     public:
     /**
-     * @name appName
+     * @name privileges
      *
-     * @brief Accessor and modifier functions for the %appName
+     * @brief Accessor and modifier functions for the %privileges
      * optional element.
      */
     //@{
@@ -669,17 +669,17 @@ namespace onem2m
     /**
      * @brief Element type.
      */
-    typedef ::xml_schema::string appName_type;
+    typedef ::onem2m::setOfAcrs privileges_type;
 
     /**
      * @brief Element optional container type.
      */
-    typedef ::xsd::cxx::tree::optional< appName_type > appName_optional;
+    typedef ::xsd::cxx::tree::optional< privileges_type > privileges_optional;
 
     /**
      * @brief Element traits type.
      */
-    typedef ::xsd::cxx::tree::traits< appName_type, char > appName_traits;
+    typedef ::xsd::cxx::tree::traits< privileges_type, char > privileges_traits;
 
     /**
      * @brief Return a read-only (constant) reference to the element
@@ -687,16 +687,16 @@ namespace onem2m
      *
      * @return A constant reference to the optional container.
      */
-    const appName_optional&
-    appName () const;
+    const privileges_optional&
+    privileges () const;
 
     /**
      * @brief Return a read-write reference to the element container.
      *
      * @return A reference to the optional container.
      */
-    appName_optional&
-    appName ();
+    privileges_optional&
+    privileges ();
 
     /**
      * @brief Set the element value.
@@ -707,7 +707,7 @@ namespace onem2m
      * the new value of the element.
      */
     void
-    appName (const appName_type& x);
+    privileges (const privileges_type& x);
 
     /**
      * @brief Set the element value.
@@ -719,7 +719,7 @@ namespace onem2m
      * Otherwise the element container is set the 'not present' state.
      */
     void
-    appName (const appName_optional& x);
+    privileges (const privileges_optional& x);
 
     /**
      * @brief Set the element value without copying.
@@ -730,14 +730,14 @@ namespace onem2m
      * of making a copy.
      */
     void
-    appName (::std::unique_ptr< appName_type > p);
+    privileges (::std::unique_ptr< privileges_type > p);
 
     //@}
 
     /**
-     * @name App-ID
+     * @name selfPrivileges
      *
-     * @brief Accessor and modifier functions for the %App-ID
+     * @brief Accessor and modifier functions for the %selfPrivileges
      * optional element.
      */
     //@{
@@ -745,17 +745,17 @@ namespace onem2m
     /**
      * @brief Element type.
      */
-    typedef ::xml_schema::string App_ID_type;
+    typedef ::onem2m::setOfAcrs selfPrivileges_type;
 
     /**
      * @brief Element optional container type.
      */
-    typedef ::xsd::cxx::tree::optional< App_ID_type > App_ID_optional;
+    typedef ::xsd::cxx::tree::optional< selfPrivileges_type > selfPrivileges_optional;
 
     /**
      * @brief Element traits type.
      */
-    typedef ::xsd::cxx::tree::traits< App_ID_type, char > App_ID_traits;
+    typedef ::xsd::cxx::tree::traits< selfPrivileges_type, char > selfPrivileges_traits;
 
     /**
      * @brief Return a read-only (constant) reference to the element
@@ -763,16 +763,16 @@ namespace onem2m
      *
      * @return A constant reference to the optional container.
      */
-    const App_ID_optional&
-    App_ID () const;
+    const selfPrivileges_optional&
+    selfPrivileges () const;
 
     /**
      * @brief Return a read-write reference to the element container.
      *
      * @return A reference to the optional container.
      */
-    App_ID_optional&
-    App_ID ();
+    selfPrivileges_optional&
+    selfPrivileges ();
 
     /**
      * @brief Set the element value.
@@ -783,7 +783,7 @@ namespace onem2m
      * the new value of the element.
      */
     void
-    App_ID (const App_ID_type& x);
+    selfPrivileges (const selfPrivileges_type& x);
 
     /**
      * @brief Set the element value.
@@ -795,7 +795,7 @@ namespace onem2m
      * Otherwise the element container is set the 'not present' state.
      */
     void
-    App_ID (const App_ID_optional& x);
+    selfPrivileges (const selfPrivileges_optional& x);
 
     /**
      * @brief Set the element value without copying.
@@ -806,452 +806,7 @@ namespace onem2m
      * of making a copy.
      */
     void
-    App_ID (::std::unique_ptr< App_ID_type > p);
-
-    //@}
-
-    /**
-     * @name AE-ID
-     *
-     * @brief Accessor and modifier functions for the %AE-ID
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::onem2m::ID AE_ID_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< AE_ID_type > AE_ID_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< AE_ID_type, char > AE_ID_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const AE_ID_optional&
-    AE_ID () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    AE_ID_optional&
-    AE_ID ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    AE_ID (const AE_ID_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    AE_ID (const AE_ID_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    AE_ID (::std::unique_ptr< AE_ID_type > p);
-
-    //@}
-
-    /**
-     * @name pointOfAccess
-     *
-     * @brief Accessor and modifier functions for the %pointOfAccess
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::onem2m::poaList pointOfAccess_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< pointOfAccess_type > pointOfAccess_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< pointOfAccess_type, char > pointOfAccess_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const pointOfAccess_optional&
-    pointOfAccess () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    pointOfAccess_optional&
-    pointOfAccess ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    pointOfAccess (const pointOfAccess_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    pointOfAccess (const pointOfAccess_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    pointOfAccess (::std::unique_ptr< pointOfAccess_type > p);
-
-    //@}
-
-    /**
-     * @name ontologyRef
-     *
-     * @brief Accessor and modifier functions for the %ontologyRef
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::uri ontologyRef_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< ontologyRef_type > ontologyRef_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< ontologyRef_type, char > ontologyRef_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const ontologyRef_optional&
-    ontologyRef () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    ontologyRef_optional&
-    ontologyRef ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    ontologyRef (const ontologyRef_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    ontologyRef (const ontologyRef_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    ontologyRef (::std::unique_ptr< ontologyRef_type > p);
-
-    //@}
-
-    /**
-     * @name nodeLink
-     *
-     * @brief Accessor and modifier functions for the %nodeLink
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::uri nodeLink_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< nodeLink_type > nodeLink_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< nodeLink_type, char > nodeLink_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const nodeLink_optional&
-    nodeLink () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    nodeLink_optional&
-    nodeLink ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    nodeLink (const nodeLink_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    nodeLink (const nodeLink_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    nodeLink (::std::unique_ptr< nodeLink_type > p);
-
-    //@}
-
-    /**
-     * @name requestReachability
-     *
-     * @brief Accessor and modifier functions for the %requestReachability
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::xml_schema::boolean requestReachability_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< requestReachability_type > requestReachability_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< requestReachability_type, char > requestReachability_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const requestReachability_optional&
-    requestReachability () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    requestReachability_optional&
-    requestReachability ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    requestReachability (const requestReachability_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    requestReachability (const requestReachability_optional& x);
-
-    //@}
-
-    /**
-     * @name contentSerialization
-     *
-     * @brief Accessor and modifier functions for the %contentSerialization
-     * optional element.
-     */
-    //@{
-
-    /**
-     * @brief Element type.
-     */
-    typedef ::onem2m::serializations contentSerialization_type;
-
-    /**
-     * @brief Element optional container type.
-     */
-    typedef ::xsd::cxx::tree::optional< contentSerialization_type > contentSerialization_optional;
-
-    /**
-     * @brief Element traits type.
-     */
-    typedef ::xsd::cxx::tree::traits< contentSerialization_type, char > contentSerialization_traits;
-
-    /**
-     * @brief Return a read-only (constant) reference to the element
-     * container.
-     *
-     * @return A constant reference to the optional container.
-     */
-    const contentSerialization_optional&
-    contentSerialization () const;
-
-    /**
-     * @brief Return a read-write reference to the element container.
-     *
-     * @return A reference to the optional container.
-     */
-    contentSerialization_optional&
-    contentSerialization ();
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x A new value to set.
-     *
-     * This function makes a copy of its argument and sets it as
-     * the new value of the element.
-     */
-    void
-    contentSerialization (const contentSerialization_type& x);
-
-    /**
-     * @brief Set the element value.
-     *
-     * @param x An optional container with the new value to set.
-     *
-     * If the value is present in @a x then this function makes a copy 
-     * of this value and sets it as the new value of the element.
-     * Otherwise the element container is set the 'not present' state.
-     */
-    void
-    contentSerialization (const contentSerialization_optional& x);
-
-    /**
-     * @brief Set the element value without copying.
-     *
-     * @param p A new value to use.
-     *
-     * This function will try to use the passed value directly instead
-     * of making a copy.
-     */
-    void
-    contentSerialization (::std::unique_ptr< contentSerialization_type > p);
+    selfPrivileges (::std::unique_ptr< selfPrivileges_type > p);
 
     //@}
 
@@ -1264,7 +819,7 @@ namespace onem2m
      * @brief Create an instance from the ultimate base and
      * initializers for required elements and attributes.
      */
-    AE ();
+    accessControlPolicy ();
 
     /**
      * @brief Create an instance from a DOM element.
@@ -1274,9 +829,9 @@ namespace onem2m
      * @param c A pointer to the object that will contain the new
      * instance.
      */
-    AE (const ::xercesc::DOMElement& e,
-        ::xml_schema::flags f = 0,
-        ::xml_schema::container* c = 0);
+    accessControlPolicy (const ::xercesc::DOMElement& e,
+                         ::xml_schema::flags f = 0,
+                         ::xml_schema::container* c = 0);
 
     /**
      * @brief Copy constructor.
@@ -1287,9 +842,9 @@ namespace onem2m
      *
      * For polymorphic object models use the @c _clone function instead.
      */
-    AE (const AE& x,
-        ::xml_schema::flags f = 0,
-        ::xml_schema::container* c = 0);
+    accessControlPolicy (const accessControlPolicy& x,
+                         ::xml_schema::flags f = 0,
+                         ::xml_schema::container* c = 0);
 
     /**
      * @brief Copy the instance polymorphically.
@@ -1302,7 +857,7 @@ namespace onem2m
      * used for copying and should be used for polymorphic object
      * models instead of the copy constructor.
      */
-    virtual AE*
+    virtual accessControlPolicy*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
 
@@ -1314,8 +869,8 @@ namespace onem2m
      *
      * For polymorphic object models use the @c _clone function instead.
      */
-    AE&
-    operator= (const AE& x);
+    accessControlPolicy&
+    operator= (const accessControlPolicy& x);
 
     //@}
 
@@ -1323,7 +878,7 @@ namespace onem2m
      * @brief Destructor.
      */
     virtual 
-    ~AE ();
+    ~accessControlPolicy ();
 
     // Implementation.
     //
@@ -1336,14 +891,8 @@ namespace onem2m
            ::xml_schema::flags);
 
     protected:
-    appName_optional appName_;
-    App_ID_optional App_ID_;
-    AE_ID_optional AE_ID_;
-    pointOfAccess_optional pointOfAccess_;
-    ontologyRef_optional ontologyRef_;
-    nodeLink_optional nodeLink_;
-    requestReachability_optional requestReachability_;
-    contentSerialization_optional contentSerialization_;
+    privileges_optional privileges_;
+    selfPrivileges_optional selfPrivileges_;
 
     //@endcond
   };
@@ -1354,7 +903,7 @@ namespace onem2m
 namespace onem2m
 {
   ::std::ostream&
-  operator<< (::std::ostream&, const AE&);
+  operator<< (::std::ostream&, const accessControlPolicy&);
 }
 
 #include <iosfwd>
@@ -1366,7 +915,7 @@ namespace onem2m
 namespace onem2m
 {
   /**
-   * @name Parsing functions for the %AE document root.
+   * @name Parsing functions for the %accessControlPolicy document root.
    */
   //@{
 
@@ -1380,10 +929,10 @@ namespace onem2m
    *
    * This function uses exceptions to report parsing errors.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (const ::std::string& uri,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (const ::std::string& uri,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a URI or a local file with an error handler.
@@ -1396,11 +945,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (const ::std::string& uri,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (const ::std::string& uri,
+                        ::xml_schema::error_handler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a URI or a local file with a Xerces-C++ DOM error
@@ -1414,11 +963,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (const ::std::string& uri,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (const ::std::string& uri,
+                        ::xercesc::DOMErrorHandler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream.
@@ -1430,10 +979,10 @@ namespace onem2m
    *
    * This function uses exceptions to report parsing errors.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream with an error handler.
@@ -1446,11 +995,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        ::xml_schema::error_handler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream with a Xerces-C++ DOM error
@@ -1464,11 +1013,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        ::xercesc::DOMErrorHandler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream with a resource id.
@@ -1484,11 +1033,11 @@ namespace onem2m
    *
    * This function uses exceptions to report parsing errors.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       const ::std::string& id,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        const ::std::string& id,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream with a resource id and an
@@ -1506,12 +1055,12 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       const ::std::string& id,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        const ::std::string& id,
+                        ::xml_schema::error_handler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a standard input stream with a resource id and a
@@ -1529,12 +1078,12 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::std::istream& is,
-       const ::std::string& id,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::std::istream& is,
+                        const ::std::string& id,
+                        ::xercesc::DOMErrorHandler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a Xerces-C++ input source.
@@ -1546,10 +1095,10 @@ namespace onem2m
    *
    * This function uses exceptions to report parsing errors.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::xercesc::InputSource& is,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::xercesc::InputSource& is,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a Xerces-C++ input source with an error handler.
@@ -1562,11 +1111,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::xercesc::InputSource& is,
-       ::xml_schema::error_handler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::xercesc::InputSource& is,
+                        ::xml_schema::error_handler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
@@ -1580,11 +1129,11 @@ namespace onem2m
    *
    * This function reports parsing errors by calling the error handler.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::xercesc::InputSource& is,
-       ::xercesc::DOMErrorHandler& eh,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::xercesc::InputSource& is,
+                        ::xercesc::DOMErrorHandler& eh,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a Xerces-C++ DOM document.
@@ -1594,10 +1143,10 @@ namespace onem2m
    * @param p Parsing properties. 
    * @return A pointer to the root of the object model.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (const ::xercesc::DOMDocument& d,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (const ::xercesc::DOMDocument& d,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   /**
    * @brief Parse a Xerces-C++ DOM document.
@@ -1611,10 +1160,10 @@ namespace onem2m
    * own_dom parsing flags to assign ownership of the DOM document
    * to the object model.
    */
-  ::std::unique_ptr< ::onem2m::AE >
-  AE_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
-       ::xml_schema::flags f = 0,
-       const ::xml_schema::properties& p = ::xml_schema::properties ());
+  ::std::unique_ptr< ::onem2m::accessControlPolicy >
+  accessControlPolicy_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
+                        ::xml_schema::flags f = 0,
+                        const ::xml_schema::properties& p = ::xml_schema::properties ());
 
   //@}
 }
@@ -1630,7 +1179,7 @@ namespace onem2m
 namespace onem2m
 {
   /**
-   * @name Serialization functions for the %AE document root.
+   * @name Serialization functions for the %accessControlPolicy document root.
    */
   //@{
 
@@ -1646,11 +1195,11 @@ namespace onem2m
    * This function uses exceptions to report serialization errors.
    */
   void
-  AE_ (::std::ostream& os,
-       const ::onem2m::AE& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::std::ostream& os,
+                        const ::onem2m::accessControlPolicy& x, 
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a standard output stream with an error handler.
@@ -1666,12 +1215,12 @@ namespace onem2m
    * handler.
    */
   void
-  AE_ (::std::ostream& os,
-       const ::onem2m::AE& x, 
-       ::xml_schema::error_handler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::std::ostream& os,
+                        const ::onem2m::accessControlPolicy& x, 
+                        ::xml_schema::error_handler& eh,
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a standard output stream with a Xerces-C++ DOM
@@ -1688,12 +1237,12 @@ namespace onem2m
    * handler.
    */
   void
-  AE_ (::std::ostream& os,
-       const ::onem2m::AE& x, 
-       ::xercesc::DOMErrorHandler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::std::ostream& os,
+                        const ::onem2m::accessControlPolicy& x, 
+                        ::xercesc::DOMErrorHandler& eh,
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a Xerces-C++ XML format target.
@@ -1707,11 +1256,11 @@ namespace onem2m
    * This function uses exceptions to report serialization errors.
    */
   void
-  AE_ (::xercesc::XMLFormatTarget& ft,
-       const ::onem2m::AE& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::xercesc::XMLFormatTarget& ft,
+                        const ::onem2m::accessControlPolicy& x, 
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a Xerces-C++ XML format target with an error
@@ -1728,12 +1277,12 @@ namespace onem2m
    * handler.
    */
   void
-  AE_ (::xercesc::XMLFormatTarget& ft,
-       const ::onem2m::AE& x, 
-       ::xml_schema::error_handler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::xercesc::XMLFormatTarget& ft,
+                        const ::onem2m::accessControlPolicy& x, 
+                        ::xml_schema::error_handler& eh,
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a Xerces-C++ XML format target with a
@@ -1750,12 +1299,12 @@ namespace onem2m
    * handler.
    */
   void
-  AE_ (::xercesc::XMLFormatTarget& ft,
-       const ::onem2m::AE& x, 
-       ::xercesc::DOMErrorHandler& eh,
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       const ::std::string& e = "UTF-8",
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::xercesc::XMLFormatTarget& ft,
+                        const ::onem2m::accessControlPolicy& x, 
+                        ::xercesc::DOMErrorHandler& eh,
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        const ::std::string& e = "UTF-8",
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to an existing Xerces-C++ DOM document.
@@ -1769,9 +1318,9 @@ namespace onem2m
    * namespace mapping attributes.
    */
   void
-  AE_ (::xercesc::DOMDocument& d,
-       const ::onem2m::AE& x,
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (::xercesc::DOMDocument& d,
+                        const ::onem2m::accessControlPolicy& x,
+                        ::xml_schema::flags f = 0);
 
   /**
    * @brief Serialize to a new Xerces-C++ DOM document.
@@ -1782,14 +1331,14 @@ namespace onem2m
    * @return A pointer to the new Xerces-C++ DOM document.
    */
   ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
-  AE_ (const ::onem2m::AE& x, 
-       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-       ::xml_schema::flags f = 0);
+  accessControlPolicy_ (const ::onem2m::accessControlPolicy& x, 
+                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                        ::xml_schema::flags f = 0);
 
   //@}
 
   void
-  operator<< (::xercesc::DOMElement&, const AE&);
+  operator<< (::xercesc::DOMElement&, const accessControlPolicy&);
 }
 
 #include <xsd/cxx/post.hxx>
@@ -1799,4 +1348,4 @@ namespace onem2m
 //
 // End epilogue.
 
-#endif // XSD_V3_2_0_ED_CDT_AE_HXX
+#endif // XSD_V3_2_0_ED_CDT_ACCESS_CONTROL_POLICY_HXX

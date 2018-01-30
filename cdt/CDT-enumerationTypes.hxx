@@ -31,6 +31,11 @@
 // in the accompanying FLOSSE file.
 //
 
+/**
+ * @file
+ * @brief Generated from CDT-enumerationTypes-v3_2_0.xsd.
+ */
+
 #ifndef XSD_V3_2_0_ED_CDT_ENUMERATION_TYPES_HXX
 #define XSD_V3_2_0_ED_CDT_ENUMERATION_TYPES_HXX
 
@@ -100,153 +105,512 @@
 
 #include <xsd/cxx/tree/std-ostream-operators.hxx>
 
+/**
+ * @brief C++ namespace for the %http://www.w3.org/2001/XMLSchema
+ * schema namespace.
+ */
 namespace xml_schema
 {
   // anyType and anySimpleType.
   //
+
+  /**
+   * @brief C++ type corresponding to the anyType XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::type type;
+
+  /**
+   * @brief C++ type corresponding to the anySimpleType XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::simple_type< char, type > simple_type;
+
+  /**
+   * @brief Alias for the anyType type.
+   */
   typedef ::xsd::cxx::tree::type container;
+
 
   // 8-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the byte XML Schema
+   * built-in type.
+   */
   typedef signed char byte;
+
+  /**
+   * @brief C++ type corresponding to the unsignedByte XML Schema
+   * built-in type.
+   */
   typedef unsigned char unsigned_byte;
+
 
   // 16-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the short XML Schema
+   * built-in type.
+   */
   typedef short short_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedShort XML Schema
+   * built-in type.
+   */
   typedef unsigned short unsigned_short;
+
 
   // 32-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the int XML Schema
+   * built-in type.
+   */
   typedef int int_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedInt XML Schema
+   * built-in type.
+   */
   typedef unsigned int unsigned_int;
+
 
   // 64-bit
   //
+
+  /**
+   * @brief C++ type corresponding to the long XML Schema
+   * built-in type.
+   */
   typedef long long long_;
+
+  /**
+   * @brief C++ type corresponding to the unsignedLong XML Schema
+   * built-in type.
+   */
   typedef unsigned long long unsigned_long;
+
 
   // Supposed to be arbitrary-length integral types.
   //
+
+  /**
+   * @brief C++ type corresponding to the integer XML Schema
+   * built-in type.
+   */
   typedef long long integer;
+
+  /**
+   * @brief C++ type corresponding to the nonPositiveInteger XML Schema
+   * built-in type.
+   */
   typedef long long non_positive_integer;
+
+  /**
+   * @brief C++ type corresponding to the nonNegativeInteger XML Schema
+   * built-in type.
+   */
   typedef unsigned long long non_negative_integer;
+
+  /**
+   * @brief C++ type corresponding to the positiveInteger XML Schema
+   * built-in type.
+   */
   typedef unsigned long long positive_integer;
+
+  /**
+   * @brief C++ type corresponding to the negativeInteger XML Schema
+   * built-in type.
+   */
   typedef long long negative_integer;
+
 
   // Boolean.
   //
+
+  /**
+   * @brief C++ type corresponding to the boolean XML Schema
+   * built-in type.
+   */
   typedef bool boolean;
+
 
   // Floating-point types.
   //
+
+  /**
+   * @brief C++ type corresponding to the float XML Schema
+   * built-in type.
+   */
   typedef float float_;
+
+  /**
+   * @brief C++ type corresponding to the double XML Schema
+   * built-in type.
+   */
   typedef double double_;
+
+  /**
+   * @brief C++ type corresponding to the decimal XML Schema
+   * built-in type.
+   */
   typedef double decimal;
+
 
   // String types.
   //
+
+  /**
+   * @brief C++ type corresponding to the string XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::string< char, simple_type > string;
+
+  /**
+   * @brief C++ type corresponding to the normalizedString XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::normalized_string< char, string > normalized_string;
+
+  /**
+   * @brief C++ type corresponding to the token XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::token< char, normalized_string > token;
+
+  /**
+   * @brief C++ type corresponding to the Name XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::name< char, token > name;
+
+  /**
+   * @brief C++ type corresponding to the NMTOKEN XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::nmtoken< char, token > nmtoken;
+
+  /**
+   * @brief C++ type corresponding to the NMTOKENS XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::nmtokens< char, simple_type, nmtoken > nmtokens;
+
+  /**
+   * @brief C++ type corresponding to the NCName XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::ncname< char, name > ncname;
+
+  /**
+   * @brief C++ type corresponding to the language XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::language< char, token > language;
+
 
   // ID/IDREF.
   //
+
+  /**
+   * @brief C++ type corresponding to the ID XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::id< char, ncname > id;
+
+  /**
+   * @brief C++ type corresponding to the IDREF XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::idref< char, ncname, type > idref;
+
+  /**
+   * @brief C++ type corresponding to the IDREFS XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::idrefs< char, simple_type, idref > idrefs;
+
 
   // URI.
   //
+
+  /**
+   * @brief C++ type corresponding to the anyURI XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::uri< char, simple_type > uri;
+
 
   // Qualified name.
   //
+
+  /**
+   * @brief C++ type corresponding to the QName XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::qname< char, simple_type, uri, ncname > qname;
+
 
   // Binary.
   //
+
+  /**
+   * @brief Binary buffer type.
+   */
   typedef ::xsd::cxx::tree::buffer< char > buffer;
+
+  /**
+   * @brief C++ type corresponding to the base64Binary XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::base64_binary< char, simple_type > base64_binary;
+
+  /**
+   * @brief C++ type corresponding to the hexBinary XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::hex_binary< char, simple_type > hex_binary;
+
 
   // Date/time.
   //
+
+  /**
+   * @brief Time zone type.
+   */
   typedef ::xsd::cxx::tree::time_zone time_zone;
+
+  /**
+   * @brief C++ type corresponding to the date XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::date< char, simple_type > date;
+
+  /**
+   * @brief C++ type corresponding to the dateTime XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::date_time< char, simple_type > date_time;
+
+  /**
+   * @brief C++ type corresponding to the duration XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::duration< char, simple_type > duration;
+
+  /**
+   * @brief C++ type corresponding to the gDay XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gday< char, simple_type > gday;
+
+  /**
+   * @brief C++ type corresponding to the gMonth XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gmonth< char, simple_type > gmonth;
+
+  /**
+   * @brief C++ type corresponding to the gMonthDay XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gmonth_day< char, simple_type > gmonth_day;
+
+  /**
+   * @brief C++ type corresponding to the gYear XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gyear< char, simple_type > gyear;
+
+  /**
+   * @brief C++ type corresponding to the gYearMonth XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::gyear_month< char, simple_type > gyear_month;
+
+  /**
+   * @brief C++ type corresponding to the time XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::time< char, simple_type > time;
+
 
   // Entity.
   //
+
+  /**
+   * @brief C++ type corresponding to the ENTITY XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::entity< char, ncname > entity;
+
+  /**
+   * @brief C++ type corresponding to the ENTITIES XML Schema
+   * built-in type.
+   */
   typedef ::xsd::cxx::tree::entities< char, simple_type, entity > entities;
 
+
+
+  /**
+   * @brief Content order sequence entry.
+   */
   typedef ::xsd::cxx::tree::content_order content_order;
   // Namespace information and list stream. Used in
   // serialization functions.
   //
+  /**
+   * @brief Namespace serialization information.
+   */
   typedef ::xsd::cxx::xml::dom::namespace_info< char > namespace_info;
+
+  /**
+   * @brief Namespace serialization information map.
+   */
   typedef ::xsd::cxx::xml::dom::namespace_infomap< char > namespace_infomap;
+
+  /**
+   * @brief List serialization stream.
+   */
   typedef ::xsd::cxx::tree::list_stream< char > list_stream;
+
+  /**
+   * @brief Serialization wrapper for the %double type.
+   */
   typedef ::xsd::cxx::tree::as_double< double_ > as_double;
+
+  /**
+   * @brief Serialization wrapper for the %decimal type.
+   */
   typedef ::xsd::cxx::tree::as_decimal< decimal > as_decimal;
+
+  /**
+   * @brief Simple type facet.
+   */
   typedef ::xsd::cxx::tree::facet facet;
 
   // Flags and properties.
   //
+
+  /**
+   * @brief Parsing and serialization flags.
+   */
   typedef ::xsd::cxx::tree::flags flags;
+
+  /**
+   * @brief Parsing properties.
+   */
   typedef ::xsd::cxx::tree::properties< char > properties;
 
   // Parsing/serialization diagnostics.
   //
+
+  /**
+   * @brief Error severity.
+   */
   typedef ::xsd::cxx::tree::severity severity;
+
+  /**
+   * @brief Error condition.
+   */
   typedef ::xsd::cxx::tree::error< char > error;
+
+  /**
+   * @brief List of %error conditions.
+   */
   typedef ::xsd::cxx::tree::diagnostics< char > diagnostics;
 
   // Exceptions.
   //
+
+  /**
+   * @brief Root of the C++/Tree %exception hierarchy.
+   */
   typedef ::xsd::cxx::tree::exception< char > exception;
+
+  /**
+   * @brief Exception indicating that the size argument exceeds
+   * the capacity argument.
+   */
   typedef ::xsd::cxx::tree::bounds< char > bounds;
+
+  /**
+   * @brief Exception indicating that a duplicate ID value
+   * was encountered in the object model.
+   */
   typedef ::xsd::cxx::tree::duplicate_id< char > duplicate_id;
+
+  /**
+   * @brief Exception indicating a parsing failure.
+   */
   typedef ::xsd::cxx::tree::parsing< char > parsing;
+
+  /**
+   * @brief Exception indicating that an expected element
+   * was not encountered.
+   */
   typedef ::xsd::cxx::tree::expected_element< char > expected_element;
+
+  /**
+   * @brief Exception indicating that an unexpected element
+   * was encountered.
+   */
   typedef ::xsd::cxx::tree::unexpected_element< char > unexpected_element;
+
+  /**
+   * @brief Exception indicating that an expected attribute
+   * was not encountered.
+   */
   typedef ::xsd::cxx::tree::expected_attribute< char > expected_attribute;
+
+  /**
+   * @brief Exception indicating that an unexpected enumerator
+   * was encountered.
+   */
   typedef ::xsd::cxx::tree::unexpected_enumerator< char > unexpected_enumerator;
+
+  /**
+   * @brief Exception indicating that the text content was
+   * expected for an element.
+   */
   typedef ::xsd::cxx::tree::expected_text_content< char > expected_text_content;
+
+  /**
+   * @brief Exception indicating that a prefix-namespace
+   * mapping was not provided.
+   */
   typedef ::xsd::cxx::tree::no_prefix_mapping< char > no_prefix_mapping;
+
+  /**
+   * @brief Exception indicating a serialization failure.
+   */
   typedef ::xsd::cxx::tree::serialization< char > serialization;
 
-  // Error handler callback interface.
-  //
+  /**
+   * @brief Error handler callback interface.
+   */
   typedef ::xsd::cxx::xml::error_handler< char > error_handler;
 
-  // DOM interaction.
-  //
+  /**
+   * @brief DOM interaction.
+   */
   namespace dom
   {
-    // Automatic pointer for DOMDocument.
-    //
+    /**
+     * @brief Automatic pointer for DOMDocument.
+     */
     using ::xsd::cxx::xml::dom::unique_ptr;
 
 #ifndef XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
 #define XSD_CXX_TREE_TREE_NODE_KEY__XML_SCHEMA
-    // DOM user data key for back pointers to tree nodes.
-    //
+    /**
+     * @brief DOM user data key for back pointers to tree nodes.
+     */
     const XMLCh* const tree_node_key = ::xsd::cxx::tree::user_data_keys::node;
 #endif
   }
@@ -262,43 +626,11 @@ namespace onem2m
   class stdEventCats;
   class operation;
   class responseType;
-  class resultContent;
-  class discResType;
-  class responseStatusCode;
-  class requestStatus;
-  class memberType;
-  class consistencyStrategy;
-  class cmdType;
-  class execModeType;
-  class execStatusType;
-  class execResultType;
   class pendingNotification;
   class notificationContentType;
   class notificationEventType;
-  class status;
-  class batteryStatus;
-  class mgmtDefinition;
-  class logTypeId;
-  class logStatus;
-  class eventType;
-  class statsRuleStatusType;
-  class statModelType;
   class encodingType;
   class accessControlOperations;
-  class filterUsage;
-  class notificationTargetPolicyAction;
-  class logicalOperator;
-  class allJoynDirection;
-  class contentFilterSyntax;
-  class contentSecurity;
-  class suid;
-  class esprimKeyGenAlgID;
-  class esprimProtocolAndAlgID;
-  class periodicIndicator;
-  class stationaryIndication;
-  class contentStatus;
-  class networkAction;
-  class triggerPurpose;
   class serializationType;
 }
 
@@ -319,1191 +651,1007 @@ namespace onem2m
 
 #include <xsd/cxx/tree/containers-wildcard.hxx>
 
+/**
+ * @brief C++ namespace for the %http://www.onem2m.org/xml/protocols
+ * schema namespace.
+ */
 namespace onem2m
 {
+  /**
+   * @brief Enumeration class corresponding to the %resourceType
+   * schema type.
+   *
+   */
   class resourceType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     resourceType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     resourceType (const ::xercesc::DOMElement& e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     resourceType (const ::xercesc::DOMAttr& a,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     resourceType (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     resourceType (const resourceType& x,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual resourceType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %cseTypeID
+   * schema type.
+   *
+   * Used for cseType attribute of <CSEBase> resource.
+   */
   class cseTypeID: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     cseTypeID (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     cseTypeID (const ::xercesc::DOMElement& e,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     cseTypeID (const ::xercesc::DOMAttr& a,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     cseTypeID (const ::std::string& s,
                const ::xercesc::DOMElement* e,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     cseTypeID (const cseTypeID& x,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual cseTypeID*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %locationSource
+   * schema type.
+   *
+   * Used for locationSource attribute of <locationPolicy> resource.
+   */
   class locationSource: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     locationSource (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     locationSource (const ::xercesc::DOMElement& e,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     locationSource (const ::xercesc::DOMAttr& a,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     locationSource (const ::std::string& s,
                     const ::xercesc::DOMElement* e,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     locationSource (const locationSource& x,
                     ::xml_schema::flags f = 0,
                     ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual locationSource*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %stdEventCats
+   * schema type.
+   *
+   * Used for ec parameter in request and eventCat attribute of <delivery>
+   * resource and cmdh
+   * policy resource types.
+   */
   class stdEventCats: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     stdEventCats (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     stdEventCats (const ::xercesc::DOMElement& e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     stdEventCats (const ::xercesc::DOMAttr& a,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     stdEventCats (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     stdEventCats (const stdEventCats& x,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual stdEventCats*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %operation
+   * schema type.
+   *
+   * Used for Operation parameter in request and operation attribute in
+   * <request> resource as well as resource as well as operationMonitor
+   */
   class operation: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     operation (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     operation (const ::xercesc::DOMElement& e,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     operation (const ::xercesc::DOMAttr& a,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     operation (const ::std::string& s,
                const ::xercesc::DOMElement* e,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     operation (const operation& x,
                ::xml_schema::flags f = 0,
                ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual operation*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %responseType
+   * schema type.
+   *
+   * Used for rt parameter in request and operation attribute in <request>
+   * resource
+   */
   class responseType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     responseType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     responseType (const ::xercesc::DOMElement& e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     responseType (const ::xercesc::DOMAttr& a,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     responseType (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     responseType (const responseType& x,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual responseType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
-  class resultContent: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    resultContent (::xml_schema::integer v);
-
-    resultContent (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    resultContent (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    resultContent (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    resultContent (const resultContent& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual resultContent*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class discResType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    discResType (::xml_schema::integer v);
-
-    discResType (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    discResType (const ::xercesc::DOMAttr& a,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    discResType (const ::std::string& s,
-                 const ::xercesc::DOMElement* e,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    discResType (const discResType& x,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    virtual discResType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class responseStatusCode: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    responseStatusCode (::xml_schema::integer v);
-
-    responseStatusCode (const ::xercesc::DOMElement& e,
-                        ::xml_schema::flags f = 0,
-                        ::xml_schema::container* c = 0);
-
-    responseStatusCode (const ::xercesc::DOMAttr& a,
-                        ::xml_schema::flags f = 0,
-                        ::xml_schema::container* c = 0);
-
-    responseStatusCode (const ::std::string& s,
-                        const ::xercesc::DOMElement* e,
-                        ::xml_schema::flags f = 0,
-                        ::xml_schema::container* c = 0);
-
-    responseStatusCode (const responseStatusCode& x,
-                        ::xml_schema::flags f = 0,
-                        ::xml_schema::container* c = 0);
-
-    virtual responseStatusCode*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class requestStatus: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    requestStatus (::xml_schema::integer v);
-
-    requestStatus (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    requestStatus (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    requestStatus (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    requestStatus (const requestStatus& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual requestStatus*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class memberType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    memberType (::xml_schema::integer v);
-
-    memberType (const ::xercesc::DOMElement& e,
-                ::xml_schema::flags f = 0,
-                ::xml_schema::container* c = 0);
-
-    memberType (const ::xercesc::DOMAttr& a,
-                ::xml_schema::flags f = 0,
-                ::xml_schema::container* c = 0);
-
-    memberType (const ::std::string& s,
-                const ::xercesc::DOMElement* e,
-                ::xml_schema::flags f = 0,
-                ::xml_schema::container* c = 0);
-
-    memberType (const memberType& x,
-                ::xml_schema::flags f = 0,
-                ::xml_schema::container* c = 0);
-
-    virtual memberType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class consistencyStrategy: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    consistencyStrategy (::xml_schema::integer v);
-
-    consistencyStrategy (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    consistencyStrategy (const ::xercesc::DOMAttr& a,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    consistencyStrategy (const ::std::string& s,
-                         const ::xercesc::DOMElement* e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    consistencyStrategy (const consistencyStrategy& x,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    virtual consistencyStrategy*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class cmdType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    cmdType (::xml_schema::integer v);
-
-    cmdType (const ::xercesc::DOMElement& e,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    cmdType (const ::xercesc::DOMAttr& a,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    cmdType (const ::std::string& s,
-             const ::xercesc::DOMElement* e,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    cmdType (const cmdType& x,
-             ::xml_schema::flags f = 0,
-             ::xml_schema::container* c = 0);
-
-    virtual cmdType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class execModeType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    execModeType (::xml_schema::integer v);
-
-    execModeType (const ::xercesc::DOMElement& e,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    execModeType (const ::xercesc::DOMAttr& a,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    execModeType (const ::std::string& s,
-                  const ::xercesc::DOMElement* e,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    execModeType (const execModeType& x,
-                  ::xml_schema::flags f = 0,
-                  ::xml_schema::container* c = 0);
-
-    virtual execModeType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class execStatusType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    execStatusType (::xml_schema::integer v);
-
-    execStatusType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execStatusType (const ::xercesc::DOMAttr& a,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execStatusType (const ::std::string& s,
-                    const ::xercesc::DOMElement* e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execStatusType (const execStatusType& x,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    virtual execStatusType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class execResultType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    execResultType (::xml_schema::integer v);
-
-    execResultType (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execResultType (const ::xercesc::DOMAttr& a,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execResultType (const ::std::string& s,
-                    const ::xercesc::DOMElement* e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    execResultType (const execResultType& x,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    virtual execResultType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
+  /**
+   * @brief Enumeration class corresponding to the %pendingNotification
+   * schema type.
+   *
+   * This is used for pendingNotification attribute in <subscription>
+   * resource.
+   */
   class pendingNotification: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     pendingNotification (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     pendingNotification (const ::xercesc::DOMElement& e,
                          ::xml_schema::flags f = 0,
                          ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     pendingNotification (const ::xercesc::DOMAttr& a,
                          ::xml_schema::flags f = 0,
                          ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     pendingNotification (const ::std::string& s,
                          const ::xercesc::DOMElement* e,
                          ::xml_schema::flags f = 0,
                          ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     pendingNotification (const pendingNotification& x,
                          ::xml_schema::flags f = 0,
                          ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual pendingNotification*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %notificationContentType
+   * schema type.
+   *
+   */
   class notificationContentType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     notificationContentType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationContentType (const ::xercesc::DOMElement& e,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationContentType (const ::xercesc::DOMAttr& a,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationContentType (const ::std::string& s,
                              const ::xercesc::DOMElement* e,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     notificationContentType (const notificationContentType& x,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual notificationContentType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %notificationEventType
+   * schema type.
+   *
+   * Used in the notificationEventType element of eventNotificationCriteria
+   * attribute of subscription resource 
+   * and in the Notification data object
+   */
   class notificationEventType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     notificationEventType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationEventType (const ::xercesc::DOMElement& e,
                            ::xml_schema::flags f = 0,
                            ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationEventType (const ::xercesc::DOMAttr& a,
                            ::xml_schema::flags f = 0,
                            ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     notificationEventType (const ::std::string& s,
                            const ::xercesc::DOMElement* e,
                            ::xml_schema::flags f = 0,
                            ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     notificationEventType (const notificationEventType& x,
                            ::xml_schema::flags f = 0,
                            ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual notificationEventType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
-  class status: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    status (::xml_schema::integer v);
-
-    status (const ::xercesc::DOMElement& e,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    status (const ::xercesc::DOMAttr& a,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    status (const ::std::string& s,
-            const ::xercesc::DOMElement* e,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    status (const status& x,
-            ::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0);
-
-    virtual status*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class batteryStatus: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    batteryStatus (::xml_schema::integer v);
-
-    batteryStatus (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    batteryStatus (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    batteryStatus (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    batteryStatus (const batteryStatus& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual batteryStatus*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class mgmtDefinition: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    mgmtDefinition (::xml_schema::integer v);
-
-    mgmtDefinition (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    mgmtDefinition (const ::xercesc::DOMAttr& a,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    mgmtDefinition (const ::std::string& s,
-                    const ::xercesc::DOMElement* e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    mgmtDefinition (const mgmtDefinition& x,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    virtual mgmtDefinition*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class logTypeId: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    logTypeId (::xml_schema::integer v);
-
-    logTypeId (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logTypeId (const ::xercesc::DOMAttr& a,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logTypeId (const ::std::string& s,
-               const ::xercesc::DOMElement* e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logTypeId (const logTypeId& x,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    virtual logTypeId*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class logStatus: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    logStatus (::xml_schema::integer v);
-
-    logStatus (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logStatus (const ::xercesc::DOMAttr& a,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logStatus (const ::std::string& s,
-               const ::xercesc::DOMElement* e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    logStatus (const logStatus& x,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    virtual logStatus*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class eventType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    eventType (::xml_schema::integer v);
-
-    eventType (const ::xercesc::DOMElement& e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    eventType (const ::xercesc::DOMAttr& a,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    eventType (const ::std::string& s,
-               const ::xercesc::DOMElement* e,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    eventType (const eventType& x,
-               ::xml_schema::flags f = 0,
-               ::xml_schema::container* c = 0);
-
-    virtual eventType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class statsRuleStatusType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    statsRuleStatusType (::xml_schema::integer v);
-
-    statsRuleStatusType (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    statsRuleStatusType (const ::xercesc::DOMAttr& a,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    statsRuleStatusType (const ::std::string& s,
-                         const ::xercesc::DOMElement* e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    statsRuleStatusType (const statsRuleStatusType& x,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    virtual statsRuleStatusType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class statModelType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    statModelType (::xml_schema::integer v);
-
-    statModelType (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    statModelType (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    statModelType (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    statModelType (const statModelType& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual statModelType*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
+  /**
+   * @brief Enumeration class corresponding to the %encodingType
+   * schema type.
+   */
   class encodingType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     encodingType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     encodingType (const ::xercesc::DOMElement& e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     encodingType (const ::xercesc::DOMAttr& a,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     encodingType (const ::std::string& s,
                   const ::xercesc::DOMElement* e,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     encodingType (const encodingType& x,
                   ::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual encodingType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
+  /**
+   * @brief Enumeration class corresponding to the %accessControlOperations
+   * schema type.
+   *
+   * Shall be considered for access control policy check by the CSE
+   */
   class accessControlOperations: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     accessControlOperations (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     accessControlOperations (const ::xercesc::DOMElement& e,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     accessControlOperations (const ::xercesc::DOMAttr& a,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     accessControlOperations (const ::std::string& s,
                              const ::xercesc::DOMElement* e,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     accessControlOperations (const accessControlOperations& x,
                              ::xml_schema::flags f = 0,
                              ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual accessControlOperations*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
   };
 
-  class filterUsage: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    filterUsage (::xml_schema::integer v);
-
-    filterUsage (const ::xercesc::DOMElement& e,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    filterUsage (const ::xercesc::DOMAttr& a,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    filterUsage (const ::std::string& s,
-                 const ::xercesc::DOMElement* e,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    filterUsage (const filterUsage& x,
-                 ::xml_schema::flags f = 0,
-                 ::xml_schema::container* c = 0);
-
-    virtual filterUsage*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class notificationTargetPolicyAction: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    notificationTargetPolicyAction (::xml_schema::integer v);
-
-    notificationTargetPolicyAction (const ::xercesc::DOMElement& e,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
-
-    notificationTargetPolicyAction (const ::xercesc::DOMAttr& a,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
-
-    notificationTargetPolicyAction (const ::std::string& s,
-                                    const ::xercesc::DOMElement* e,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
-
-    notificationTargetPolicyAction (const notificationTargetPolicyAction& x,
-                                    ::xml_schema::flags f = 0,
-                                    ::xml_schema::container* c = 0);
-
-    virtual notificationTargetPolicyAction*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class logicalOperator: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    logicalOperator (::xml_schema::integer v);
-
-    logicalOperator (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    logicalOperator (const ::xercesc::DOMAttr& a,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    logicalOperator (const ::std::string& s,
-                     const ::xercesc::DOMElement* e,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    logicalOperator (const logicalOperator& x,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    virtual logicalOperator*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class allJoynDirection: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    allJoynDirection (::xml_schema::integer v);
-
-    allJoynDirection (const ::xercesc::DOMElement& e,
-                      ::xml_schema::flags f = 0,
-                      ::xml_schema::container* c = 0);
-
-    allJoynDirection (const ::xercesc::DOMAttr& a,
-                      ::xml_schema::flags f = 0,
-                      ::xml_schema::container* c = 0);
-
-    allJoynDirection (const ::std::string& s,
-                      const ::xercesc::DOMElement* e,
-                      ::xml_schema::flags f = 0,
-                      ::xml_schema::container* c = 0);
-
-    allJoynDirection (const allJoynDirection& x,
-                      ::xml_schema::flags f = 0,
-                      ::xml_schema::container* c = 0);
-
-    virtual allJoynDirection*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class contentFilterSyntax: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    contentFilterSyntax (::xml_schema::integer v);
-
-    contentFilterSyntax (const ::xercesc::DOMElement& e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    contentFilterSyntax (const ::xercesc::DOMAttr& a,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    contentFilterSyntax (const ::std::string& s,
-                         const ::xercesc::DOMElement* e,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    contentFilterSyntax (const contentFilterSyntax& x,
-                         ::xml_schema::flags f = 0,
-                         ::xml_schema::container* c = 0);
-
-    virtual contentFilterSyntax*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class contentSecurity: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    contentSecurity (::xml_schema::integer v);
-
-    contentSecurity (const ::xercesc::DOMElement& e,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    contentSecurity (const ::xercesc::DOMAttr& a,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    contentSecurity (const ::std::string& s,
-                     const ::xercesc::DOMElement* e,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    contentSecurity (const contentSecurity& x,
-                     ::xml_schema::flags f = 0,
-                     ::xml_schema::container* c = 0);
-
-    virtual contentSecurity*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class suid: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    suid (::xml_schema::integer v);
-
-    suid (const ::xercesc::DOMElement& e,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    suid (const ::xercesc::DOMAttr& a,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    suid (const ::std::string& s,
-          const ::xercesc::DOMElement* e,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    suid (const suid& x,
-          ::xml_schema::flags f = 0,
-          ::xml_schema::container* c = 0);
-
-    virtual suid*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class esprimKeyGenAlgID: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    esprimKeyGenAlgID (::xml_schema::integer v);
-
-    esprimKeyGenAlgID (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    esprimKeyGenAlgID (const ::xercesc::DOMAttr& a,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    esprimKeyGenAlgID (const ::std::string& s,
-                       const ::xercesc::DOMElement* e,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    esprimKeyGenAlgID (const esprimKeyGenAlgID& x,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    virtual esprimKeyGenAlgID*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class esprimProtocolAndAlgID: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    esprimProtocolAndAlgID (::xml_schema::integer v);
-
-    esprimProtocolAndAlgID (const ::xercesc::DOMElement& e,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
-
-    esprimProtocolAndAlgID (const ::xercesc::DOMAttr& a,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
-
-    esprimProtocolAndAlgID (const ::std::string& s,
-                            const ::xercesc::DOMElement* e,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
-
-    esprimProtocolAndAlgID (const esprimProtocolAndAlgID& x,
-                            ::xml_schema::flags f = 0,
-                            ::xml_schema::container* c = 0);
-
-    virtual esprimProtocolAndAlgID*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class periodicIndicator: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    periodicIndicator (::xml_schema::integer v);
-
-    periodicIndicator (const ::xercesc::DOMElement& e,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    periodicIndicator (const ::xercesc::DOMAttr& a,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    periodicIndicator (const ::std::string& s,
-                       const ::xercesc::DOMElement* e,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    periodicIndicator (const periodicIndicator& x,
-                       ::xml_schema::flags f = 0,
-                       ::xml_schema::container* c = 0);
-
-    virtual periodicIndicator*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class stationaryIndication: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    stationaryIndication (::xml_schema::integer v);
-
-    stationaryIndication (const ::xercesc::DOMElement& e,
-                          ::xml_schema::flags f = 0,
-                          ::xml_schema::container* c = 0);
-
-    stationaryIndication (const ::xercesc::DOMAttr& a,
-                          ::xml_schema::flags f = 0,
-                          ::xml_schema::container* c = 0);
-
-    stationaryIndication (const ::std::string& s,
-                          const ::xercesc::DOMElement* e,
-                          ::xml_schema::flags f = 0,
-                          ::xml_schema::container* c = 0);
-
-    stationaryIndication (const stationaryIndication& x,
-                          ::xml_schema::flags f = 0,
-                          ::xml_schema::container* c = 0);
-
-    virtual stationaryIndication*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class contentStatus: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    contentStatus (::xml_schema::integer v);
-
-    contentStatus (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    contentStatus (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    contentStatus (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    contentStatus (const contentStatus& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual contentStatus*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class networkAction: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    networkAction (::xml_schema::integer v);
-
-    networkAction (const ::xercesc::DOMElement& e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    networkAction (const ::xercesc::DOMAttr& a,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    networkAction (const ::std::string& s,
-                   const ::xercesc::DOMElement* e,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    networkAction (const networkAction& x,
-                   ::xml_schema::flags f = 0,
-                   ::xml_schema::container* c = 0);
-
-    virtual networkAction*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
-  class triggerPurpose: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
-  {
-    public:
-    triggerPurpose (::xml_schema::integer v);
-
-    triggerPurpose (const ::xercesc::DOMElement& e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    triggerPurpose (const ::xercesc::DOMAttr& a,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    triggerPurpose (const ::std::string& s,
-                    const ::xercesc::DOMElement* e,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    triggerPurpose (const triggerPurpose& x,
-                    ::xml_schema::flags f = 0,
-                    ::xml_schema::container* c = 0);
-
-    virtual triggerPurpose*
-    _clone (::xml_schema::flags f = 0,
-            ::xml_schema::container* c = 0) const;
-  };
-
+  /**
+   * @brief Enumeration class corresponding to the %serializationType
+   * schema type.
+   *
+   * Used for the triggerInfoSrializationType field of trigger requests on
+   * Mcn
+   */
   class serializationType: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::integer, char, ::xml_schema::simple_type >
   {
     public:
+    /**
+     * @brief Create an instance from a fundamental type value.
+     *
+     * @param v A fundamental type value.
+     */
     serializationType (::xml_schema::integer v);
 
+    /**
+     * @brief Create an instance from a DOM element.
+     *
+     * @param e A DOM element to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     serializationType (const ::xercesc::DOMElement& e,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a DOM attribute.
+     *
+     * @param a A DOM attribute to extract the data from.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     serializationType (const ::xercesc::DOMAttr& a,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Create an instance from a string fragment.
+     *
+     * @param s A string fragment to extract the data from.
+     * @param e A pointer to DOM element containing the string fragment.
+     * @param f Flags to create the new instance with.
+     * @param c A pointer to the object that will contain the new
+     * instance.
+     */
     serializationType (const ::std::string& s,
                        const ::xercesc::DOMElement* e,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy constructor.
+     *
+     * @param x An instance to make a copy of.
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     *
+     * For polymorphic object models use the @c _clone function instead.
+     */
     serializationType (const serializationType& x,
                        ::xml_schema::flags f = 0,
                        ::xml_schema::container* c = 0);
 
+    /**
+     * @brief Copy the instance polymorphically.
+     *
+     * @param f Flags to create the copy with.
+     * @param c A pointer to the object that will contain the copy.
+     * @return A pointer to the dynamically allocated copy.
+     *
+     * This function ensures that the dynamic type of the instance is
+     * used for copying and should be used for polymorphic object
+     * models instead of the copy constructor.
+     */
     virtual serializationType*
     _clone (::xml_schema::flags f = 0,
             ::xml_schema::container* c = 0) const;
@@ -1533,36 +1681,6 @@ namespace onem2m
   operator<< (::std::ostream&, const responseType&);
 
   ::std::ostream&
-  operator<< (::std::ostream&, const resultContent&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const discResType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const responseStatusCode&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const requestStatus&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const memberType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const consistencyStrategy&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const cmdType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const execModeType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const execStatusType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const execResultType&);
-
-  ::std::ostream&
   operator<< (::std::ostream&, const pendingNotification&);
 
   ::std::ostream&
@@ -1572,76 +1690,10 @@ namespace onem2m
   operator<< (::std::ostream&, const notificationEventType&);
 
   ::std::ostream&
-  operator<< (::std::ostream&, const status&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const batteryStatus&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const mgmtDefinition&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const logTypeId&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const logStatus&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const eventType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const statsRuleStatusType&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const statModelType&);
-
-  ::std::ostream&
   operator<< (::std::ostream&, const encodingType&);
 
   ::std::ostream&
   operator<< (::std::ostream&, const accessControlOperations&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const filterUsage&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const notificationTargetPolicyAction&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const logicalOperator&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const allJoynDirection&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const contentFilterSyntax&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const contentSecurity&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const suid&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const esprimKeyGenAlgID&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const esprimProtocolAndAlgID&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const periodicIndicator&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const stationaryIndication&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const contentStatus&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const networkAction&);
-
-  ::std::ostream&
-  operator<< (::std::ostream&, const triggerPurpose&);
 
   ::std::ostream&
   operator<< (::std::ostream&, const serializationType&);
@@ -1728,106 +1780,6 @@ namespace onem2m
               const responseType&);
 
   void
-  operator<< (::xercesc::DOMElement&, const resultContent&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const resultContent&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const resultContent&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const discResType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const discResType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const discResType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const responseStatusCode&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const responseStatusCode&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const responseStatusCode&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const requestStatus&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const requestStatus&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const requestStatus&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const memberType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const memberType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const memberType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const consistencyStrategy&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const consistencyStrategy&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const consistencyStrategy&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const cmdType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const cmdType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const cmdType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const execModeType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const execModeType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const execModeType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const execStatusType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const execStatusType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const execStatusType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const execResultType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const execResultType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const execResultType&);
-
-  void
   operator<< (::xercesc::DOMElement&, const pendingNotification&);
 
   void
@@ -1858,86 +1810,6 @@ namespace onem2m
               const notificationEventType&);
 
   void
-  operator<< (::xercesc::DOMElement&, const status&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const status&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const status&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const batteryStatus&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const batteryStatus&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const batteryStatus&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const mgmtDefinition&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const mgmtDefinition&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const mgmtDefinition&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const logTypeId&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const logTypeId&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const logTypeId&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const logStatus&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const logStatus&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const logStatus&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const eventType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const eventType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const eventType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const statsRuleStatusType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const statsRuleStatusType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const statsRuleStatusType&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const statModelType&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const statModelType&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const statModelType&);
-
-  void
   operator<< (::xercesc::DOMElement&, const encodingType&);
 
   void
@@ -1956,146 +1828,6 @@ namespace onem2m
   void
   operator<< (::xml_schema::list_stream&,
               const accessControlOperations&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const filterUsage&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const filterUsage&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const filterUsage&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const notificationTargetPolicyAction&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const notificationTargetPolicyAction&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const notificationTargetPolicyAction&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const logicalOperator&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const logicalOperator&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const logicalOperator&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const allJoynDirection&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const allJoynDirection&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const allJoynDirection&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const contentFilterSyntax&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const contentFilterSyntax&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const contentFilterSyntax&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const contentSecurity&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const contentSecurity&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const contentSecurity&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const suid&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const suid&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const suid&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const esprimKeyGenAlgID&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const esprimKeyGenAlgID&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const esprimKeyGenAlgID&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const esprimProtocolAndAlgID&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const esprimProtocolAndAlgID&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const esprimProtocolAndAlgID&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const periodicIndicator&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const periodicIndicator&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const periodicIndicator&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const stationaryIndication&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const stationaryIndication&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const stationaryIndication&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const contentStatus&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const contentStatus&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const contentStatus&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const networkAction&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const networkAction&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const networkAction&);
-
-  void
-  operator<< (::xercesc::DOMElement&, const triggerPurpose&);
-
-  void
-  operator<< (::xercesc::DOMAttr&, const triggerPurpose&);
-
-  void
-  operator<< (::xml_schema::list_stream&,
-              const triggerPurpose&);
 
   void
   operator<< (::xercesc::DOMElement&, const serializationType&);

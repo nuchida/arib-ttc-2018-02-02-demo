@@ -7,11 +7,206 @@
 
 
 /** \file onem2m.hxx
- * This file contains the constants used in the OS-IoT API .
+ * This file contains the constants used in the OS-IoT API.
+ */
+
+/** \mainpage ATIS OS-IoT
+ * \section intro_sec Introduction
+ *
+ * This library allows an IoT client to interact with resources stored on a oneM2M Infrastructure Node (IN) or Mobile Node (MN) via the oneM2M protocol.
+ * For general information about OS-IoT refer to http://os-iot.org/.
+ * For a practical introduction to oneM2M concepts and procedures see the oneM2M Developers Guide http://onem2m.org/application-developer-guide/welcome.
+ *
+ * \section docguide_sec Guide to the API Specification
+ *
+ * This detailed API specification should be read in conjunction with the OS-IoT Manual which is available from the OS-IoT
+ * web site.
+ *
+ * The public interface to the library is contained in the namespace onem2m.
+ *
+ * Functions to support oneM2M network operations are documented in the onem2m functions.
+ *
+ * The oneM2M resource object library is documented in the onem2m classes. Note in paricular the 
+ * \ref optionalsequence "special handling for optional and sequence elements".
+ * For the semantics and structure of oneM2M
+ * resource objects refer to the oneM2M specifications. For information about the supported resource fields
+ * refer to the OS-IoT Manual.
+ *
+ * \section usage_sec Library Usage
+ *
+ * To use the library, the application should follow the following steps:
+ * -# Initialize the library with onem2m::initialize()
+ * -# Update any values for pre-set parameters (e.g. the 'from' parameter) to those needed for the application using functions like onem2m::setHostName(), onem2m::setFrom() or onem2m::setProtocol().
+ * -# For CREATE and UPDATE operations create a oneM2M resource object of the appropriate type and populate with the data 
+ * to be included in the resource. Example classes that represent oneM2M resource objects are onem2m::AE, onem2m::container,
+ * onem2m::contentInstance, onem2m::subscription
+ * and onem2m::accessControlPolicy.
+ * -# Call a high level function such as retrieveResource(), deleteResource(), createResource(), updateResource() to perform the desired operation on resources at the IN. These functions will generate signalling to the IN and return the result to the calling application. In this version of the library these are synchronous (blocking) functions.
+ * -# Repeat steps 2 and/or 3 and/or 4 as needed.
+ * -# Terminate the library with onem2m::terminate()
+ *
+ * Refer to the file osiotcmd.cxx for an example command-line application that demonstrates this use of the API and 
+ * also how to interact with oneM2M resource objects. A further example application and a guide to how to build your
+ * own applications are available on the OS-IoT web site.
+ *
+ * Note that the function onem2m::send() is a low level routine and should only be used by advanced
+ * applications that need to interact with the oneM2M signalling at a finer level of granularity than is possible with the
+ * high level routines.
+ */
+
+/** \page optionalsequence Special Hanlding for _optional, _sequence and _base types
+ * \section optionalseuqnceinfo Introduction
+ *
+ * Classes that contain parameters that are optional or sequences according ot the oneM2M XML protocol definition will
+ * generate special templated types with names ending "_optional" or "_sequence" respectively. For example, 
+ * the onem2m::resource class
+ * contain a \ref onem2m::resource::labels "labels" element which is of type "labels_optional".
+ *
+ * These types provide a set of standard methods to manipulate the collection of data in the element which must be used.
+ * These methods allow the _optional or _sequence element to be translated in to it's underlying type. For example,
+ * if an object r is of type onem2m::resource then r.labels().get() will return an object of type onem2m::labels.
+ * Note that attempting to perform get() on an optional element that is not present will result in a memory
+ * violation. The present() method should be used to check if an optional element is present before accessing.
+ *
+ * Classes that represent lists of information may be built on top of a type with a name ending "_base". For example 
+ * onem2m::labels is built on onem2m::labels_base. In this case an interface of a standard C++ sequence (e.g., std::vector) will 
+ * be provided.
+ * 
+ * \section optionalinfo _optional type interface
+ * 
+ * See section 2.8.2 of the Code Synthesis C++/Tree Mapping User Manual.
+ * 
+ * Types named "_optional" have the following interface:
+ *
+ * ~~~~
+ *    template <typename X>
+ *    class optional
+ *    {
+ *    public:
+ *      optional ();
+ *    
+ *      // Makes a deep copy.
+ *      //
+ *      explicit
+ *      optional (const X&);
+ *    
+ *      // Assumes ownership.
+ *      //
+ *      explicit
+ *      optional (std::[auto|unique]_ptr<X>);
+ *    
+ *      optional (const optional&);
+ *    
+ *    public:
+ *      optional&
+ *      operator= (const X&);
+ *    
+ *      optional&
+ *      operator= (const optional&);
+ *    
+ *      // Pointer-like interface.
+ *      //
+ *    public:
+ *      const X*
+ *      operator-> () const;
+ *    
+ *      X*
+ *      operator-> ();
+ *    
+ *      const X&
+ *      operator* () const;
+ *    
+ *      X&
+ *      operator* ();
+ *    
+ *      typedef void (optional::*bool_convertible) ();
+ *      operator bool_convertible () const;
+ *    
+ *      // Get/set interface.
+ *      //
+ *    public:
+ *      // Check if an element is present or not
+ *      bool
+ *      present () const;
+ *    
+ *      // Get an element if it is present - an error otherwise
+ *      const X&
+ *      get () const;
+ *    
+ *      // Get an element if it is present - an error otherwise
+ *      X&
+ *      get ();
+ *    
+ *      // Makes a deep copy.
+ *      //
+ *      void
+ *      set (const X&);
+ *    
+ *      // Assumes ownership.
+ *      //
+ *      void
+ *      set (std::[auto|unique]_ptr<X>);
+ *    
+ *      // Detach and return the contained value.
+ *      //
+ *      std::[auto|unique]_ptr<X>
+ *      detach ();
+ *    
+ *      // Delete an element
+ *      void
+ *      reset ();
+ *    };
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator== (const optional<X>&, const optional<X>&);
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator!= (const optional<X>&, const optional<X>&);
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator< (const optional<X>&, const optional<X>&);
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator> (const optional<X>&, const optional<X>&);
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator<= (const optional<X>&, const optional<X>&);
+ *    
+ *    template <typename X>
+ *    bool
+ *    operator>= (const optional<X>&, const optional<X>&);
+ *   
+ * ~~~~
+ * 
+ * \section sequenceinfo _sequence and _base type interface
+ * 
+ * See section 2.8.3 of the Code Synthesis C++/Tree Mapping User Manual.
+ * 
+ * Types named "_sequence" or derived from an "_base" class provide an interface 
+ * of a standard C++ sequence (e.g., std::vector). Familiar functions like
+ * push_back() etc. may be used.
+ *
+ * \section optionalexample Example
+ *
+ * The type onem2m::AE contains an optional element of type onem2m::labels. The onem2m::labels type is a sequence type 
+ * derived from onem2m::labels_base.
+ * 
+ * The following code shows how the labels parameter in the AE may be populated
+ * 
+ * ~~~~
+ *    auto ae = AE();
+ *    auto lb = labels ();
+ *    lb.push_back("Type/updateSensor");
+ *    ae.labels(lb);
+ * ~~~~
  */
 
 
-/** @cond */
 #ifndef ONEM2M_HXX_
 #define ONEM2M_HXX_
 
@@ -29,7 +224,7 @@
 #include "cdt/CDT-notification.hxx"
 #include "cdt/CDT-subscription.hxx"
 #include "cdt/CDT-pollingChannel.hxx"
-/** @endcond */
+#include "cdt/CDT-accessControlPolicy.hxx"
 
 /* Notes on adding new resource types
  * 
@@ -37,20 +232,27 @@
  * - Include all needed XML source in the buildCommend in /CDT. Note that this may include selecting which part(s) of the XSD files are needed
  * - Add any new files to the #includes above
  * - Add any enumerated values needed from CDT-enumeration types to this file
+ * - If needed, add a new root element to the end of the CDT-commonTypes file
  * - Edit commonTypesCustom.hxx and .cxx to add procedures to map the new resource types in to the primitiveContent field. Note that you must also add the relevant 
  *   files to the #includes in these files
  * - In onem2m.cxx add support for the new resource types to createResource and updateResource (if applicable)
  * - In onem2mxml.cxx in function "_parsePrimitiveResponseXml" add handlers for the new resource types
+ * - In onem2mxml.css in function "_parseAnyType" add handler for the new resource types (if you require in this context)
  * - In onem2mjson.cxx in function "_parsePrimitiveResponseJson" add handlers for resource specific attributes for the new resource types
  * - In onem2mjson.cxx in function "_jsonEncodeDomElement" add handlers for any new parameters that are supported and for which the default behaviour
  *   of encoding as a quoted string isn't appropriate
-*/ 
+ */ 
 
+ /**
+  * @brief Public interface for functions and classes in the OS-IoT library.
+  *
+  * Functions are used to perform oneM2M operations. Classes represent oneM2M resources and operations.
+  */
 namespace onem2m
 {
   // Magic values defined in CDT-enumerationTypes.xsd
 
-  /** 
+ /** 
   * Identifiers for types of resource or operations in prototol
   */
   enum onem2mResourceType: ::xml_schema::integer {
@@ -62,7 +264,21 @@ namespace onem2m
     resourceTypeCSEBase,
     resourceTypePollingChannel = 15,
     resourceTypeSubscription = 23,
-    operationTypeNotification = 30500 ///< Value used to designate a notification operation, which is not a resource
+    operationTypeNotification = 30500, ///< Value used to designate a notification operation, which is not a resource
+    objectTypeListOfURIs = 30501 ///< Valuse used to designate a listOfURIs object, which is not a resource
+  };
+ 
+  /**
+   * Identifiers for accessControlOperations
+   */
+  enum onem2mAccesControlOperation: ::xml_schema::integer {
+    accessControlCreate = 1, ///< Create access control
+    accessControlRetrieve = 2, ///< Retrieve access control
+    accessControlUpdate = 4, ///< Update access control
+    accessControlDelete = 8, ///< Delete access control
+    accessControlNotify = 16, ///<Notify access control
+    accessControlDiscover = 32, ///<Discover access control
+    accessControlAll = 63 ///<All access control
   };
 
   
@@ -76,6 +292,16 @@ namespace onem2m
     operationDelete,    ///< Delete a resource
     operationNotify     ///< Notify of a resource change
 
+  };
+
+
+  /**
+  * Identifiers for notificationContentType
+  */
+  enum onem2mMotificationContentType: ::xml_schema::integer {
+    nctAllAttributes = 1, ///< All atributes
+    nctModifiedAttributes,  ///< Modified attributes
+    nctResourceId,    ///< Resource Id
   };
 
 
@@ -97,6 +323,15 @@ namespace onem2m
   enum onem2mProtocol {
     protocolXml = 1, ///< XML protocol
     protocolJson ///< JSON protocol
+  };
+
+  /**
+  * Identifiers for transports used sending comments
+  */
+  enum onem2mTransport {
+     transportHttp = 1, ///< HTTP transport
+     transportHttpsCertificate, ///< HTTPS transport with certificate-based security
+     transportHttpsPsk ///< HTTPS transport with PSK security
   };
 
 
@@ -239,7 +474,9 @@ namespace onem2m
     onem2mCURLE_NO_CONNECTION_AVAILABLE,
     onem2mCURLE_SSL_PINNEDPUBKEYNOTMATCH,
     onem2mCURLE_SSL_INVALIDCERTSTATUS,   
-    onem2mCURLE_HTTP2_STREAM
+    onem2mCURLE_HTTP2_STREAM,
+    onem2mErrCantOpenServer = 2001,
+    onem2mErrServerAlreadyRunning
   };
 
   typedef std::function<onem2mResult(std::string, std::string&, ::onem2m::notification*)> notificationCallbackFn;
@@ -252,11 +489,65 @@ namespace onem2m
 
   void terminate ();
 
-  void setProtocol( onem2mProtocol );  
+  void setProtocol( const onem2mProtocol );
+
+  onem2mProtocol getProtocol();  
+
+  void setTransport( const onem2mTransport );
+
+  onem2mTransport getTransport();
+
+  void setCipherList( const std::string ); 
+
+  std::string getCipherList();
+
+  void setVerifyPeer( const bool );
+
+  bool getVerifyPeer();
+
+  void setVerifyHost( const bool );
+
+  bool getVerifyHost();
+
+  void setSubjectAltNameAllowed( const std::string );
+
+  std::string getSubjectAltNameAllowed();
+
+  void setCaInfo( const std::string );
+
+  std::string getCaInfo();
+  
+  void setCaPath( const std::string );
+
+  std::string getCaPath();
+
+  void setSslCert( const std::string );
+
+  std::string getSslCert();
+
+  void setSslKey( const std::string );
+
+  std::string getSslKey();
+
+  void setKeyPasswd( const std::string );
+
+  std::string getKeyPasswd();
+
+  void setPskIdentity( const std::string );
+
+  std::string getPskIdentity();
+
+  void setPskKey( const std::string );
+
+  std::string getPskKey();
  
   void setHostName( const std::string name );
 
   void setFrom( const std::string newFrom );
+
+  void setMaxAcceptSize( const size_t newMaxAcceptSize );
+  
+  size_t getMaxAcceptSize();
 
   std::string getFrom();
 
@@ -284,10 +575,15 @@ namespace onem2m
                   long&,
                   ::xml_schema::integer&);
 
-  void startHttpServer( const std::vector<std::string>& addressRegex, long port, notificationCallbackFn callback );
+  bool getHttpServerRunning();
+
+  long startHttpServer( const std::vector<std::string>& addressRegex, long port, notificationCallbackFn callback );
 
   void stopHttpServer( );
 
 }
+
+
+
 
 #endif

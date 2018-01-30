@@ -10,7 +10,7 @@
 #include "cdt/CDT-container.hxx"
 #include "cdt/CDT-subscription.hxx"
 #include "cdt/CDT-pollingChannel.hxx"
-
+#include "cdt/CDT-accessControlPolicy.hxx"
 
 namespace onem2m
 {
@@ -46,6 +46,9 @@ namespace onem2m
 
 	public:
 	 void setPrimitiveContent( const ::onem2m::pollingChannel& );
+
+        public:
+         void setPrimitiveContent( const ::onem2m::accessControlPolicy& );
 
 
 	};

@@ -25,9 +25,9 @@ The files in this repository are configured for the hardware and network configu
 
 ```
 IP Addr            Node
-192.168.11.16      Linaro Debian Linux DragonBoard 410C running the CSE
-192.168.11.17      Linaro Debian Linux DragonBoard 410C running the receiver
-192.168.11.15      Linaro Debian Linux DragonBoard 410C running the sender 
+192.168.179.10      Linaro Debian Linux DragonBoard 410C running the CSE
+192.168.179.11      Linaro Debian Linux DragonBoard 410C running the receiver
+192.168.179.12      Linaro Debian Linux DragonBoard 410C running the sender 
 ```
 
 ### Demo Limitations

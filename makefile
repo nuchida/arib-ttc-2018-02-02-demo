@@ -19,7 +19,7 @@ debug: sender receiver
 sender: sender.o
 	c++ $(LINKFLAGS) -o sender sender.o \
 	-lsoc -l96BoardsGPIO \
-	-losiot -lxerces-c -lcurl -lpthread \
+	-losiot -lxerces-c -lcurl -lpthread -lssl -lcrypto \
 	
 
 
@@ -29,7 +29,7 @@ sender.o: sender.cxx
 receiver: receiver.o
 	c++ $(LINKFLAGS) -o receiver receiver.o \
 	-lsoc -l96BoardsGPIO \
-	-losiot -lxerces-c -lcurl -lpthread \
+	-losiot -lxerces-c -lcurl -lpthread -lssl -lcrypto \
 
 
 
