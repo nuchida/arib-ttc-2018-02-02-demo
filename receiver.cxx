@@ -84,7 +84,7 @@ long createSubscription (const ::std::string & object_address, const std::string
   events.push_back( ::onem2m::updateOfResource ); // Add one notification case to the list of notification events
   criteria.notificationEventType(events); // Assign the list of events to the criteria
   sub.eventNotificationCriteria(criteria); // Assign the criteria to the subscription
-  uris.push_back(my_addr); // Add one notification URI
+  uris.push_back(ae_address); // Add one notification URI
   sub.notificationURI(uris);
   sub.notificationContentType(nctAllAttributes);
   sub.latestNotify(true);
