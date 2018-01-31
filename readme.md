@@ -107,3 +107,8 @@ To learn more about ATIS Open Source – Internet of Things (OS-IoT), please vis
 
 ## LICENSE
 Please see the files ```LICENSE.md``` in this package for the licensing terms and the requirements
+
+## Acknowledgements
+
+Special thanks to Iain Sharp, ATIS, for his technical support.
+
