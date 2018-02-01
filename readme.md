@@ -46,7 +46,7 @@ https://www.os-iot.org/testing-with-a-cse/
 The newest version of OM2M as of Feburuary 02 is V1.2.0.
 
 Configure the IP address setting in /configuration/config.ini
-org.eclipse.om2m.cseBaseAddress=127.0.0.1  --> chnage to your IP address of DragonBoard for CSE
+org.eclipse.om2m.cseBaseAddress=127.0.0.1  --> change to your IP address of DragonBoard for CSE
 
 ## Building and Running The Applications (sender and receiver)
 
